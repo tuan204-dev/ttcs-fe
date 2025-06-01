@@ -1,6 +1,6 @@
 import { Tag } from 'antd'
 import React from 'react'
-import { FaBookmark, FaBuilding, FaMapMarkerAlt, FaUserTie } from 'react-icons/fa'
+import { FaBookmark, FaBuilding, FaMapMarkerAlt, FaUserTie, FaBriefcase } from 'react-icons/fa'
 import { GoPaperclip } from 'react-icons/go'
 
 const ChatPage = () => {
@@ -34,7 +34,7 @@ const ChatPage = () => {
                             <div className="flex-shrink-0">
                                 <img
                                     className="h-10 w-10 rounded-full"
-                                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                                    src="https://avatar.iran.liara.run/public/35"
                                     alt="Recruiter"
                                 />
                             </div>
@@ -58,7 +58,7 @@ const ChatPage = () => {
                         <div className="flex items-start space-x-3">
                             <div className="flex-shrink-0">
                                 <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                                    <i className="fas fa-briefcase text-blue-600" />
+                                    <FaBriefcase className="text-blue-600" />
                                 </div>
                             </div>
                             <div className="flex-1 min-w-0">
@@ -82,7 +82,7 @@ const ChatPage = () => {
                             <div className="flex-shrink-0">
                                 <img
                                     className="h-10 w-10 rounded-full"
-                                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                                    src="https://avatar.iran.liara.run/public/35"
                                     alt="Recruiter"
                                 />
                             </div>
@@ -106,7 +106,7 @@ const ChatPage = () => {
                         <div className="flex items-start space-x-3">
                             <div className="flex-shrink-0">
                                 <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
-                                    <i className="fas fa-building text-purple-600" />
+                                    <FaBuilding className="text-purple-600" />
                                 </div>
                             </div>
                             <div className="flex-1 min-w-0">
@@ -130,7 +130,7 @@ const ChatPage = () => {
                             <div className="flex-shrink-0">
                                 <img
                                     className="h-10 w-10 rounded-full"
-                                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                                    src="https://avatar.iran.liara.run/public/35"
                                     alt="Recruiter"
                                 />
                             </div>
@@ -154,7 +154,7 @@ const ChatPage = () => {
                         <div className="flex items-start space-x-3">
                             <div className="flex-shrink-0">
                                 <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                                    <i className="fas fa-briefcase text-blue-600" />
+                                    <FaBriefcase className="text-blue-600" />
                                 </div>
                             </div>
                             <div className="flex-1 min-w-0">
@@ -178,7 +178,7 @@ const ChatPage = () => {
                             <div className="flex-shrink-0">
                                 <img
                                     className="h-10 w-10 rounded-full"
-                                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                                    src="https://avatar.iran.liara.run/public/35"
                                     alt="Recruiter"
                                 />
                             </div>
@@ -202,7 +202,7 @@ const ChatPage = () => {
                         <div className="flex items-start space-x-3">
                             <div className="flex-shrink-0">
                                 <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
-                                    <i className="fas fa-building text-purple-600" />
+                                    <FaBuilding className="text-purple-600" />
                                 </div>
                             </div>
                             <div className="flex-1 min-w-0">
@@ -226,7 +226,7 @@ const ChatPage = () => {
                             <div className="flex-shrink-0">
                                 <img
                                     className="h-10 w-10 rounded-full"
-                                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                                    src="https://avatar.iran.liara.run/public/35"
                                     alt="Recruiter"
                                 />
                             </div>
@@ -300,7 +300,7 @@ const ChatPage = () => {
                         <div className="flex-shrink-0 mr-3">
                             <img
                                 className="h-8 w-8 rounded-full"
-                                src="https://randomuser.me/api/portraits/women/44.jpg"
+                                src="https://avatar.iran.liara.run/public/35"
                                 alt="Sarah Johnson"
                             />
                         </div>
@@ -330,7 +330,7 @@ const ChatPage = () => {
                         <div className="flex-shrink-0 mr-3">
                             <img
                                 className="h-8 w-8 rounded-full"
-                                src="https://randomuser.me/api/portraits/women/44.jpg"
+                                src="https://avatar.iran.liara.run/public/35"
                                 alt="Sarah Johnson"
                             />
                         </div>
@@ -349,7 +349,7 @@ const ChatPage = () => {
                         <div className="flex-shrink-0 mr-3">
                             <img
                                 className="h-8 w-8 rounded-full"
-                                src="https://randomuser.me/api/portraits/women/44.jpg"
+                                src="https://avatar.iran.liara.run/public/35"
                                 alt="Sarah Johnson"
                             />
                         </div>

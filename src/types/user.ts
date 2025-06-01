@@ -18,3 +18,16 @@ export interface IUser {
     createdAt: Date
     updatedAt: Date
 }
+
+export interface IRecruiter {
+    _id: string
+    email: string
+    password: string
+    firstName: string
+    lastName: string
+    phone?: string
+    gender: Gender
+    avatar?: string
+    createdAt: Date
+    updatedAt: Date
+}

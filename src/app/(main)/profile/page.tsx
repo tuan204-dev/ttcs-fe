@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaPencilAlt } from 'react-icons/fa'
+import { FaBehance, FaDownload, FaLinkedin, FaPencilAlt } from 'react-icons/fa'
 
 const ProfilePage = () => {
     return (
@@ -8,7 +8,7 @@ const ProfilePage = () => {
             <div className="text-center mb-8">
                 <div className="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-4 overflow-hidden">
                     <img
-                        src="https://randomuser.me/api/portraits/women/65.jpg"
+                        src="https://avatar.iran.liara.run/public/35"
                         alt="Profile photo"
                         className="w-full h-full object-cover"
                     />
@@ -356,11 +356,11 @@ const ProfilePage = () => {
                         <h3 className="font-medium text-gray-800">Social Media</h3>
                         <div className="flex space-x-4 mt-1">
                             <a href="#" className="text-blue-600 hover:underline">
-                                <i className="fab fa-linkedin mr-1" />
+                                <FaLinkedin className="mr-1" />
                                 LinkedIn
                             </a>
                             <a href="#" className="text-blue-600 hover:underline">
-                                <i className="fab fa-behance mr-1" />
+                                <FaBehance className="mr-1" />
                                 Behance
                             </a>
                         </div>
@@ -368,7 +368,7 @@ const ProfilePage = () => {
                     <div>
                         <h3 className="font-medium text-gray-800">Resume</h3>
                         <button className="mt-1 px-4 py-2 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition">
-                            <i className="fas fa-download mr-2" />
+                            <FaDownload className="mr-2" />
                             Download Resume (PDF)
                         </button>
                     </div>

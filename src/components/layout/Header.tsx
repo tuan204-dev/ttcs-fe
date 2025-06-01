@@ -43,7 +43,7 @@ const Header = () => {
 
     return (
         <header className="h-16 fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-10 pl-5 flex justify-between items-center">
-            <Link href={'/'}><h1 className='text-3xl font-bold text-blue-600'>Career Contact</h1></Link>
+            <Link href={'/'}><h1 className='text-3xl font-bold text-blue-600'>RecruitPro</h1></Link>
             <div className='flex items-center gap-x-3 h-full'>
                 {
                     menus.map((item) => (

@@ -1,20 +1,25 @@
-import JobCard from '@/components/JobCard'
-import React from 'react'
-import { Pagination, Select } from 'antd';
+'use client'
 import Filter from '@/components/Filter';
+import JobCard from '@/components/JobCard';
+import { useJobs } from '@/hook/job';
+import { Pagination } from 'antd';
+import { useState } from 'react';
 
 
 const HomePage = () => {
+    const [filterData, setFilterData] = useState({})
+    const { jobs } = useJobs(filterData)
+
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col lg:flex-row gap-6">
-                <Filter />
+                <Filter setFilterData={setFilterData} />
                 <main className="w-full lg:w-3/4">
                     <div className="flex justify-between items-center mb-6">
                         <h2 className="text-xl font-semibold text-gray-800">
-                            245 Jobs Available
+                            {jobs.length ?? 0} Jobs Available
                         </h2>
-                        <div className="flex items-center">
+                        {/* <div className="flex items-center">
                             <span className="text-sm text-gray-600 mr-2">Sort by:</span>
                             <Select
                                 defaultValue={'1'}
@@ -34,19 +39,19 @@ const HomePage = () => {
                                     }
                                 ]}
                             />
-                        </div>
+                        </div> */}
                     </div>
                     <div className="space-y-4" id="jobListings">
                         {
-                            Array(19).fill(0).map((_, index) => (
-                                <JobCard key={index} />
+                            jobs.map((job) => (
+                                <JobCard key={job._id} job={job} />
                             ))
                         }
                     </div>
 
-                    <div className='flex justify-center py-5 w-full'>
+                    {/* <div className='flex justify-center py-5 w-full'>
                         <Pagination defaultCurrent={1} total={50} />
-                    </div>
+                    </div> */}
                 </main>
             </div>
         </div>
