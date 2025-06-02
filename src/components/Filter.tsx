@@ -27,7 +27,7 @@ interface FilterProps {
 }
 
 const Filter: FC<FilterProps> = ({ setFilterData }) => {
-    const { control, formState: { errors }, handleSubmit, reset, watch } = useForm<FilterSchema>({
+    const { control, formState: { errors }, handleSubmit, reset } = useForm<FilterSchema>({
         resolver: zodResolver(schema),
         defaultValues: {
             title: '',
@@ -36,8 +36,6 @@ const Filter: FC<FilterProps> = ({ setFilterData }) => {
             jobType: []
         }
     })
-
-    console.log('watch', watch())
 
     const handleClearFilters = () => {
         setFilterData({})

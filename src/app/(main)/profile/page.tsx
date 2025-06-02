@@ -1,7 +1,13 @@
-import React from 'react'
+'use client'
+import { GenderLabel } from '@/constants/enum'
+import { useAppSelector } from '@/redux/store'
+import { formatPhoneNumber } from '@/utils/phone'
+import React, { useState } from 'react'
 import { FaBehance, FaDownload, FaLinkedin, FaPencilAlt } from 'react-icons/fa'
 
 const ProfilePage = () => {
+    const loginUser = useAppSelector(state => state.auth.user)
+
     return (
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
             {/* Header Section */}
@@ -13,19 +19,17 @@ const ProfilePage = () => {
                         className="w-full h-full object-cover"
                     />
                 </div>
-                <h1 className="text-2xl font-medium text-gray-800">Tanaka Yuki</h1>
+                <h1 className="text-2xl font-medium text-gray-800">{`${loginUser?.firstName} ${loginUser?.lastName}`}</h1>
                 <div className="flex justify-center space-x-4 mt-2 text-gray-600 text-sm">
-                    <span>Born: 1995/05/15</span>
-                    <span>Female</span>
-                    <span>Japanese</span>
+                    <span>{GenderLabel[loginUser?.gender ?? 0]}</span>
+                    <span>{loginUser?.location}</span>
                 </div>
                 <div className="mt-2 text-gray-600">
-                    <p>Tokyo, Shinjuku-ku</p>
-                    <p>080-1234-5678 | y.tanaka@example.com</p>
+                    <p>{loginUser?.phone ? `${formatPhoneNumber(loginUser?.phone)} | ` : ''}{loginUser?.email}</p>
                 </div>
             </div>
             {/* Career Objective */}
-            <div className="mb-8">
+            {/* <div className="mb-8">
                 <div className="flex items-center mb-4">
                     <h2 className="border-l-4 border-[#3b82f6] pl-3 text-lg font-medium text-gray-800">
                         🎯 Career Objective
@@ -41,7 +45,7 @@ const ProfilePage = () => {
                     user needs. Looking for opportunities to collaborate with cross-functional
                     teams in an agile development process.
                 </p>
-            </div>
+            </div> */}
             <div className="border-b border-gray-200 my-8" />
             {/* Education */}
             <div className="mb-8">
@@ -54,7 +58,7 @@ const ProfilePage = () => {
                     </button>
                 </div>
                 <div className="space-y-6">
-                    <div className="pl-4">
+                    {/* <div className="pl-4">
                         <div className="flex justify-between items-baseline">
                             <h3 className="font-medium text-gray-800">Tokyo University</h3>
                             <span className="text-sm text-gray-500">2013/04 - 2017/03</span>
@@ -74,12 +78,15 @@ const ProfilePage = () => {
                             <span className="text-sm text-gray-500">2010/04 - 2013/03</span>
                         </div>
                         <p className="text-gray-600">Science and Technology Course</p>
-                    </div>
+                    </div> */}
+                    {
+                        loginUser?.education && <h3 className="font-medium text-gray-800">{loginUser?.education}</h3>
+                    }
                 </div>
             </div>
             <div className="border-b border-gray-200 my-8" />
             {/* Work Experience */}
-            <div className="mb-8">
+            {/* <div className="mb-8">
                 <div className="flex items-center mb-4">
                     <h2 className="border-l-4 border-[#3b82f6] pl-3 text-lg font-medium text-gray-800">
                         💼 Work Experience
@@ -147,10 +154,10 @@ const ProfilePage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="border-b border-gray-200 my-8" />
+            </div> */}
+            {/* <div className="border-b border-gray-200 my-8" /> */}
             {/* Certifications */}
-            <div className="mb-8">
+            {/* <div className="mb-8">
                 <div className="flex items-center mb-4">
                     <h2 className="border-l-4 border-[#3b82f6] pl-3 text-lg font-medium text-gray-800">
                         📜 Certifications &amp; Qualifications
@@ -176,7 +183,7 @@ const ProfilePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="border-b border-gray-200 my-8" />
+            <div className="border-b border-gray-200 my-8" /> */}
             {/* Skills */}
             <div className="mb-8">
                 <div className="flex items-center mb-4">
@@ -188,93 +195,19 @@ const ProfilePage = () => {
                     </button>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pl-4">
-                    <div>
-                        <h3 className="font-medium text-gray-800 mb-2">Design</h3>
-                        <div className="space-y-2">
-                            <div>
-                                <div className="flex justify-between text-sm mb-1">
-                                    <span>UI/UX Design</span>
-                                    <span>4/5</span>
-                                </div>
-                                <div className="w-full skill-bar rounded-full h-2">
-                                    <div
-                                        className="skill-fill h-2 rounded-full"
-                                        style={{ width: "80%" }}
-                                    />
-                                </div>
+                    {
+                        loginUser?.skills?.map((skill, index) => (
+                            <div key={index} className="flex justify-between text-sm mb-1">
+                                <span>{skill.name}</span>
+                                <span>{skill.level}/5</span>
                             </div>
-                            <div>
-                                <div className="flex justify-between text-sm mb-1">
-                                    <span>Prototyping</span>
-                                    <span>4/5</span>
-                                </div>
-                                <div className="w-full skill-bar rounded-full h-2">
-                                    <div
-                                        className="skill-fill h-2 rounded-full"
-                                        style={{ width: "80%" }}
-                                    />
-                                </div>
-                            </div>
-                            <div>
-                                <div className="flex justify-between text-sm mb-1">
-                                    <span>User Research</span>
-                                    <span>3/5</span>
-                                </div>
-                                <div className="w-full skill-bar rounded-full h-2">
-                                    <div
-                                        className="skill-fill h-2 rounded-full"
-                                        style={{ width: "60%" }}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 className="font-medium text-gray-800 mb-2">Soft Skills</h3>
-                        <div className="space-y-2">
-                            <div>
-                                <div className="flex justify-between text-sm mb-1">
-                                    <span>Communication</span>
-                                    <span>4/5</span>
-                                </div>
-                                <div className="w-full skill-bar rounded-full h-2">
-                                    <div
-                                        className="skill-fill h-2 rounded-full"
-                                        style={{ width: "80%" }}
-                                    />
-                                </div>
-                            </div>
-                            <div>
-                                <div className="flex justify-between text-sm mb-1">
-                                    <span>Teamwork</span>
-                                    <span>5/5</span>
-                                </div>
-                                <div className="w-full skill-bar rounded-full h-2">
-                                    <div
-                                        className="skill-fill h-2 rounded-full"
-                                        style={{ width: "100%" }}
-                                    />
-                                </div>
-                            </div>
-                            <div>
-                                <div className="flex justify-between text-sm mb-1">
-                                    <span>Time Management</span>
-                                    <span>4/5</span>
-                                </div>
-                                <div className="w-full skill-bar rounded-full h-2">
-                                    <div
-                                        className="skill-fill h-2 rounded-full"
-                                        style={{ width: "80%" }}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        ))
+                    }
                 </div>
             </div>
-            <div className="border-b border-gray-200 my-8" />
+            {/* <div className="border-b border-gray-200 my-8" /> */}
             {/* Languages */}
-            <div className="mb-8">
+            {/* <div className="mb-8">
                 <div className="flex items-center mb-4">
                     <h2 className="border-l-4 border-[#3b82f6] pl-3 text-lg font-medium text-gray-800">
                         🌐 Languages
@@ -294,9 +227,9 @@ const ProfilePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="border-b border-gray-200 my-8" />
+            <div className="border-b border-gray-200 my-8" /> */}
             {/* Preferred Job Conditions */}
-            <div className="mb-8">
+            {/* <div className="mb-8">
                 <div className="flex items-center mb-4">
                     <h2 className="border-l-4 border-[#3b82f6] pl-3 text-lg font-medium text-gray-800">
                         📌 Preferred Job Conditions
@@ -328,9 +261,9 @@ const ProfilePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="border-b border-gray-200 my-8" />
+            <div className="border-b border-gray-200 my-8" /> */}
             {/* Additional Sections */}
-            <div className="mb-8">
+            {/* <div className="mb-8">
                 <div className="flex items-center mb-4">
                     <h2 className="border-l-4 border-[#3b82f6] pl-3 text-lg font-medium text-gray-800">
                         💬 Additional Information
@@ -373,7 +306,7 @@ const ProfilePage = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

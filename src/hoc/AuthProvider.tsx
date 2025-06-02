@@ -48,7 +48,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   if (isLoading) {
     return (
-      <div className="grid place-items-center h-screen">
+      <div className="grid place-items-center h-[calc(100vh-100px)]">
         <Spin />
       </div>
     );

@@ -1,5 +1,4 @@
 import { Gender } from "@/constants/enum"
-import { ILocation } from "./ILocation"
 import { ISkill } from "./skill"
 
 export interface IUser {
@@ -10,7 +9,7 @@ export interface IUser {
     lastName: string
     phone?: string
     gender: Gender
-    location?: ILocation
+    location?: string
     avatar?: string
     education?: string
     skills?: ISkill[]

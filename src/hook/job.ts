@@ -13,3 +13,27 @@ export const useJobs = (params?: any) => {
         mutate
     }
 }
+
+export const useJobDetail = (jobId: string) => {
+    const { data, error, isLoading, isValidating, mutate } = useSWR(`/job/${jobId}`, () => JobService.getJobDetail(jobId))
+
+    return {
+        job: data,
+        error,
+        isLoading,
+        isValidating,
+        mutate
+    }
+}
+
+export const useRecruiting = () => {
+    const { data, error, isLoading, isValidating, mutate } = useSWR('/recruiting', JobService.getAllRecruiting)
+
+    return {
+        recruiting: data ?? [],
+        error,
+        isLoading,
+        isValidating,
+        mutate
+    }
+}

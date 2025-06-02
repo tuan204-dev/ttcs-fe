@@ -58,6 +58,12 @@ const sendRegisterMail = async (email: string) => {
     return data;
 }
 
-const AuthServices = { refreshToken, getUserInfo, login, logout, sendRegisterMail }
+const registerWorker = async (params: any) => {
+    const { data } = await axiosNoAuth.post(`/worker/auth/register`, params)
+
+    return data;
+}
+
+const AuthServices = { refreshToken, getUserInfo, login, logout, sendRegisterMail, registerWorker }
 
 export default AuthServices;

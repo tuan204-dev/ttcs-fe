@@ -1,4 +1,4 @@
-import { JobType, RecruitingStatus } from "@/constants/enum";
+import { JobType, RecruitingProgress, RecruitingStatus } from "@/constants/enum";
 import { IRecruiter } from "./user";
 
 
@@ -18,6 +18,15 @@ export interface IJob {
     recruiterId?: string
     recruiter?: IRecruiter
     companyId?: string
+    createdAt?: Date
+    updatedAt?: Date
+}
+
+export interface IRecruiting {
+    _id?: string
+    jobId?: string
+    job?: IJob
+    progress: RecruitingProgress
     createdAt?: Date
     updatedAt?: Date
 }
