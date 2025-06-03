@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { JobType } from '@/constants/enum'
 import { useBookmarks } from '@/hook/bookmark'
 import BookmarkService from '@/services/bookMarkServices'
 import { IJob } from '@/types/job'
 import { formatNumber } from '@/utils/number'
 import { Tag } from 'antd'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { FC, useMemo, useState } from 'react'
 import toast from 'react-hot-toast'
 import { FaBookmark, FaMapMarkerAlt, FaRegBookmark, FaUserTie } from 'react-icons/fa'
@@ -14,6 +15,7 @@ interface JobCardProps {
 }
 
 const JobCard: FC<JobCardProps> = ({ job }) => {
+    const router = useRouter()
     const { bookmarks, mutate: refresh } = useBookmarks()
     const [isTogglingBookmark, setIsTogglingBookmark] = useState(false)
 
@@ -44,8 +46,9 @@ const JobCard: FC<JobCardProps> = ({ job }) => {
 
     const isBookmarked = useMemo(() => bookmarks.some(({ jobId }) => jobId._id === job._id), [bookmarks, job._id])
 
-    const handleBookmarkToggle = async () => {
+    const handleBookmarkToggle = async (e: any) => {
         try {
+            e.stopPropagation()
             setIsTogglingBookmark(true)
             if (isBookmarked) {
                 await BookmarkService.removeBookmark(job._id as string)
@@ -62,8 +65,12 @@ const JobCard: FC<JobCardProps> = ({ job }) => {
         }
     }
 
+    const handleClickJob = () => {
+        router.push(`/job/${job._id}`)
+    }
+
     return (
-        <Link href={`/job/${job._id}`} className="bg-white px-6 py-5 rounded-xl shadow border-l-4 border-green-500 hover:shadow-md transition flex flex-col">
+        <div onClick={handleClickJob} className="bg-white px-6 py-5 rounded-xl shadow border-l-4 border-green-500 hover:shadow-md transition flex flex-col cursor-pointer">
             <div className='flex justify-between items-center'>
                 <div className='flex items-center gap-x-[6px]'>
                     <Tag color={jobTypeData.color} className='rounded-full'>{jobTypeData.label}</Tag>
@@ -97,7 +104,7 @@ const JobCard: FC<JobCardProps> = ({ job }) => {
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
 

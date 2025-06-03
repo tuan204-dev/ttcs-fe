@@ -1,8 +1,9 @@
 'use client'
 
 import MainChat from '@/components/message/MainChat'
-import { RecruitingProgressLabel } from '@/constants/enum'
-import { useRecruiting } from '@/hook/job'
+import RecruitingItem from '@/components/message/RecruitingItem'
+import { RecruitingProgress, RecruitingProgressLabel } from '@/constants/enum'
+import { useRecruiting, useRecruitingDetail } from '@/hook/job'
 import { updateRecruiting } from '@/redux/slices/recruitingSlice'
 import { useAppSelector } from '@/redux/store'
 import { IRecruiting } from '@/types/job'
@@ -12,6 +13,7 @@ import { useDispatch } from 'react-redux'
 const ChatPage = () => {
     const { recruiting } = useRecruiting()
     const selectedRecruiting = useAppSelector(state => state.recruiting.selectedRecruiting)
+    const { recruitingDetail } = useRecruitingDetail(selectedRecruiting?._id ?? '')
     const dispatch = useDispatch()
 
     const handleClickChat = (recruiting: IRecruiting) => {
@@ -67,37 +69,17 @@ const ChatPage = () => {
                     </div> */}
                     {
                         recruiting?.map((item) => (
-                            <div onClick={() => handleClickChat(item)} key={item?._id} className={cn("p-4 border-b border-gray-100 hover:bg-gray-50 cursor-pointer", {
-                                'bg-[#f0f7ff] border-l-[3px] border-l-primary': selectedRecruiting?._id === item?._id
-                            })}>
-                                <div className="flex items-start space-x-3">
-                                    <div className="flex-shrink-0">
-                                        <img
-                                            className="h-10 w-10 rounded-full"
-                                            src="https://avatar.iran.liara.run/public/35"
-                                            alt="Recruiter"
-                                        />
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                        <div className="flex justify-between items-center">
-                                            <p className="text-sm font-medium text-gray-900 truncate">
-                                                {item?.job?.title}
-                                            </p>
-                                            <span className="text-xs text-gray-500">1d ago</span>
-                                        </div>
-                                        <p className="text-sm text-gray-500 truncate">{item?.job?.recruiter?.firstName}</p>
-                                        <p className="text-sm text-gray-700 mt-1">
-                                            We d like to proceed with a technical interview. Are you available
-                                            next Wednesday at 2pm?
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            <RecruitingItem
+                                key={item._id}
+                                recruiting={item}
+                                onClick={handleClickChat}
+                                isActive={selectedRecruiting?._id === item._id}
+                            />
                         ))
                     }
                 </div>
                 {/* Application Progress */}
-                {selectedRecruiting && <div className="p-4 border-t border-gray-200 bg-gray-50">
+                {recruitingDetail && <div className="p-4 border-t border-gray-200 bg-gray-50">
                     <h3 className="text-sm font-medium text-gray-700 mb-3">
                         Application Progress
                     </h3>
@@ -108,14 +90,16 @@ const ChatPage = () => {
 
                                 return (
                                     <li key={key} className={cn("progress-step", {
-                                        'text-primary font-semibold': Number(key) === Number(selectedRecruiting?.progress),
-                                        'text-green-500': Number(key) < Number(selectedRecruiting?.progress),
-                                    })}>{`${Number(key) < Number(selectedRecruiting?.progress) ? '✓ ' : ''}${value}`}</li>
+                                        'text-primary font-semibold': Number(key) === Number(recruitingDetail?.progress),
+                                        'text-green-500': Number(key) < Number(recruitingDetail?.progress),
+                                    })}>{`${Number(key) < Number(recruitingDetail?.progress) ? '✓ ' : ''}${value}`}</li>
                                 )
                             })
                         }
 
-                        <li className={cn("progress-step",)}>Rejected</li>
+                        <li className={cn("progress-step", {
+                            'text-red-500 font-semibold': recruitingDetail?.progress === RecruitingProgress.REJECTED
+                        })}>Rejected</li>
                     </ul>
                 </div>}
             </div>

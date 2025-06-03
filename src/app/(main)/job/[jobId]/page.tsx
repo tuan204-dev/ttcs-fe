@@ -1,8 +1,10 @@
 'use client'
 import Loading from '@/components/ui/Loading'
 import { JobType } from '@/constants/enum'
-import { useJobDetail } from '@/hook/job'
+import { useJobDetail, useRecruiting } from '@/hook/job'
+import { updateRecruiting } from '@/redux/slices/recruitingSlice'
 import JobService from '@/services/jobServices'
+import cn from '@/utils/cn'
 import { formatNumber } from '@/utils/number'
 import { formatPhoneNumber } from '@/utils/phone'
 import { formatTime } from '@/utils/time'
@@ -11,13 +13,20 @@ import { useParams, useRouter } from 'next/navigation'
 import React, { useMemo, useState } from 'react'
 import toast from 'react-hot-toast'
 import { FaUser } from 'react-icons/fa'
+import { useDispatch } from 'react-redux'
 
 const JobDetail = () => {
     const { jobId } = useParams<{ jobId: string }>()
     const router = useRouter()
 
     const { job, isLoading } = useJobDetail(jobId)
+    const { recruiting, mutate: refreshAllRecruiting } = useRecruiting()
     const [isApplying, setIsApplying] = useState(false)
+    const dispatch = useDispatch()
+
+    const isJobApplied = useMemo(() => {
+        return recruiting.some(item => item.job?._id === jobId)
+    }, [recruiting, jobId])
 
     const jobTypeData = useMemo(() => {
         switch (job?.jobType) {
@@ -56,7 +65,9 @@ const JobDetail = () => {
     const handleClickApply = async () => {
         try {
             setIsApplying(true)
-            await JobService.applyJob(jobId as string)
+            const newRecruiting = await JobService.applyJob(jobId)
+            dispatch(updateRecruiting(newRecruiting))
+            await refreshAllRecruiting()
             toast.success('Application submitted successfully!')
             router.push(`/message`)
         } catch (e) {
@@ -67,11 +78,10 @@ const JobDetail = () => {
         }
     }
 
-
     return (
-        <div className="container mx-auto px-4 py-8 max-w-6xl">
+        <div className="container mx-auto px-4 py-8 max-w-6xl min-h-[calc(100vh-64px)] flex flex-col">
             {/* Main Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1">
                 {/* Left Column (Job Details) */}
                 <div className="lg:col-span-2 space-y-6">
                     {/* Job Basics Card */}
@@ -116,47 +126,33 @@ const JobDetail = () => {
                             </p>
                             <h4 className="font-bold mt-6 mb-2">Responsibilities:</h4>
                             <ul className="mb-4 pl-8 list-disc">
-                                <li>
-                                    Coordinate internal resources and third parties/vendors for
-                                    flawless execution of projects
-                                </li>
-                                <li>
-                                    Ensure that all projects are delivered on-time, within scope and
-                                    within budget
-                                </li>
-                                <li>
-                                    Develop project scopes and objectives, involving all relevant
-                                    stakeholders
-                                </li>
-                                <li>
-                                    Measure project performance using appropriate systems, tools and
-                                    techniques
-                                </li>
-                                <li>Report and escalate to management as needed</li>
+                                {
+                                    job?.responsibilities?.map((item, index) => (
+                                        <li key={index}>
+                                            {item}
+                                        </li>
+                                    ))
+                                }
                             </ul>
                             <h4 className="font-bold mt-6 mb-2">Requirements:</h4>
                             <ul className="mb-4 pl-8 list-disc">
-                                <li>
-                                    Proven working experience as a project manager in the IT sector
-                                </li>
-                                <li>Excellent client-facing and internal communication skills</li>
-                                <li>
-                                    Solid organizational skills including attention to detail and
-                                    multitasking skills
-                                </li>
-                                <li>
-                                    Strong working knowledge of project management tools (JIRA,
-                                    Trello, Asana)
-                                </li>
-                                <li>PMP / PRINCE II certification is a plus</li>
+                                {
+                                    job?.requirements?.map((item, index) => (
+                                        <li key={index}>
+                                            {item}
+                                        </li>
+                                    ))
+                                }
                             </ul>
                             <h4 className="font-bold mt-6 mb-2">Benefits:</h4>
                             <ul className="mb-4 pl-8 list-disc">
-                                <li>Competitive salary package</li>
-                                <li>Health insurance and wellness programs</li>
-                                <li>Flexible working hours and remote work options</li>
-                                <li>Professional development opportunities</li>
-                                <li>Dynamic and international work environment</li>
+                                {
+                                    job?.benefits?.map((item, index) => (
+                                        <li key={index}>
+                                            {item}
+                                        </li>
+                                    ))
+                                }
                             </ul>
                         </div>
                     </div>
@@ -200,8 +196,12 @@ const JobDetail = () => {
                                 Submit your application now and well get back to you as soon as
                                 possible.
                             </p>
-                            <button disabled={isApplying} onClick={handleClickApply} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition duration-200">
-                                Apply Now
+                            <button disabled={isApplying || isJobApplied} onClick={handleClickApply} className={cn("w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition duration-200", {
+                                'opacity-50 cursor-not-allowed': isApplying || isJobApplied
+                            })}>
+                                {
+                                    isApplying ? 'Applying...' : isJobApplied ? 'Already Applied' : 'Apply Now'
+                                }
                             </button>
                             {/* <p className="text-sm text-gray-500 text-center">
                                 Application deadline: July 15, 2023

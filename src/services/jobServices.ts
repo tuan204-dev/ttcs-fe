@@ -1,6 +1,6 @@
 import { ApiResponse } from "@/types/common";
 import axiosInstance from "./axios";
-import { IJob, IRecruiting } from "@/types/job";
+import { IJob, IRecruiting, IRecruitingDetail } from "@/types/job";
 import { truncateParams } from "@/utils/truncateParams";
 
 const getJobs = async (params: any) => {
@@ -16,9 +16,9 @@ const getJobDetail = async (jobId: string) => {
 }
 
 const applyJob = async (jobId: string) => {
-    const { data } = await axiosInstance.post(`/job/${jobId}/apply`);
+    const { data } = await axiosInstance.post<ApiResponse<IRecruiting>>(`/job/${jobId}/apply`);
 
-    return data;
+    return data.data;
 }
 
 const getAllRecruiting = async () => {
@@ -27,6 +27,22 @@ const getAllRecruiting = async () => {
     return data.data;
 }
 
-const JobService = { getJobs, getJobDetail, applyJob, getAllRecruiting }
+const getRecruitingDetail = async (recruitingId: string) => {
+    if (!recruitingId) {
+        return {}
+    }
+
+    const { data } = await axiosInstance.get<ApiResponse<IRecruitingDetail>>(`/recruiting/${recruitingId}`);
+
+    return data.data;
+}
+
+const sendMessage = async (recruitingId: string, content: string) => {
+    const { data } = await axiosInstance.post(`/recruiting/worker`, { recruitingId, content });
+
+    return data;
+}
+
+const JobService = { getJobs, getJobDetail, applyJob, getAllRecruiting, getRecruitingDetail, sendMessage }
 
 export default JobService;
