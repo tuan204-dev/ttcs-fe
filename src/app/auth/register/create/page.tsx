@@ -5,13 +5,14 @@ import { Gender, SkillLevel } from '@/constants/enum';
 import { SKILLS } from '@/constants/skill';
 import AuthServices from '@/services/authServices';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button, Input, Select } from 'antd';
+import { Button, DatePicker, Input, Select } from 'antd';
 import { isUndefined, omit, omitBy } from 'lodash';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { FaBriefcase } from 'react-icons/fa';
+import { FiPlus } from 'react-icons/fi';
 import { MdClear } from 'react-icons/md';
 import { z } from 'zod';
 
@@ -34,6 +35,9 @@ const schema = z
                 level: z.number(),
             })
         ),
+        dateOfBirth: z.string().min(1, 'Date of birth is required'),
+        description: z.string().optional(),
+        careerOrientation: z.string().optional(),
     })
     .refine((data) => data.password === data.confirmPassword, {
         message: 'Passwords must match',
@@ -46,6 +50,7 @@ const defaultSkill = {
     name: 'JavaScript',
     level: SkillLevel.BEGINNER,
 };
+
 
 const RegisterPage = () => {
     const searchParams = useSearchParams();
@@ -69,6 +74,9 @@ const RegisterPage = () => {
             education: '',
             skills: [defaultSkill],
             gender: Gender.UNKNOWN,
+            careerOrientation: '',
+            description: '',
+            dateOfBirth: '',
         },
     });
 
@@ -104,6 +112,7 @@ const RegisterPage = () => {
             const submitData = {
                 ...omit(objectCleaned, ['confirmPassword']),
                 token,
+                dateOfBirth: new Date(data.dateOfBirth).toISOString(),
             };
 
             await AuthServices.registerWorker(submitData);
@@ -289,22 +298,17 @@ const RegisterPage = () => {
 
                 <div className="grid grid-cols-2 gap-x-3">
                     <div className="flex flex-col gap-y-1">
-                        <label htmlFor="location" className="text-sm text-gray-950">
-                            Location
+                        <label htmlFor="dateOfBirth" className="text-sm text-gray-950">
+                            Birthday <span className="text-red-600">*</span>
                         </label>
                         <div className="flex flex-col">
-                            <Controller
-                                control={control}
-                                name="location"
-                                render={({ field }) => (
-                                    <Input
-                                        id="location"
-                                        {...field}
-                                        placeholder="Enter your location"
-                                        className="w-full"
-                                        status={errors.location ? 'error' : undefined}
-                                    />
-                                )}
+                            <DatePicker
+                                id="dateOfBirth"
+                                placeholder="Enter your birthday"
+                                className="w-full"
+                                format={'DD-MM-YYYY'}
+                                onChange={(_, dateString) => setValue('dateOfBirth', String(dateString))}
+                                status={errors.dateOfBirth ? 'error' : undefined}
                             />
 
                             <ErrorMessage message={errors.location?.message} />
@@ -336,9 +340,43 @@ const RegisterPage = () => {
                 </div>
 
                 <div className="flex flex-col gap-y-1">
-                    <label htmlFor="skills" className="text-sm text-gray-950">
-                        Skills
+                    <label htmlFor="location" className="text-sm text-gray-950">
+                        Location
                     </label>
+                    <div className="flex flex-col">
+                        <Controller
+                            control={control}
+                            name="location"
+                            render={({ field }) => (
+                                <Input
+                                    id="location"
+                                    {...field}
+                                    placeholder="Enter your location"
+                                    className="w-full"
+                                    status={errors.location ? 'error' : undefined}
+                                />
+                            )}
+                        />
+
+                        <ErrorMessage message={errors.location?.message} />
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-y-1">
+                    <div className="flex items-center justify-between">
+                        <label htmlFor="skills" className="text-sm text-gray-950">
+                            Skills
+                        </label>
+
+                        <button
+                            disabled={formData.skills.length >= 10}
+                            onClick={handleClickAddSkill}
+                            type='button'
+                            className='size-5 rounded-full border border-gray-200 grid place-content-center text-sm'
+                        >
+                            <FiPlus className='translate-x-[0.5px]' />
+                        </button>
+                    </div>
 
                     <div className="flex flex-col gap-y-2">
                         {formData.skills.map((skill, index) => (
@@ -394,15 +432,52 @@ const RegisterPage = () => {
                             </div>
                         ))}
                     </div>
+                </div>
 
-                    <Button
-                        size="small"
-                        className="w-3/5 mx-auto mt-2"
-                        disabled={formData.skills.length >= 10}
-                        onClick={handleClickAddSkill}
-                    >
-                        Add skill
-                    </Button>
+                <div className="flex flex-col gap-y-1">
+                    <label htmlFor="careerOrientation" className="text-sm text-gray-950">
+                        Career Orientation
+                    </label>
+                    <div className="flex flex-col">
+                        <Controller
+                            control={control}
+                            name="careerOrientation"
+                            render={({ field }) => (
+                                <Input.TextArea
+                                    id="careerOrientation"
+                                    {...field}
+                                    placeholder="Enter your careerOrientation"
+                                    className="w-full"
+                                    status={errors.careerOrientation ? 'error' : undefined}
+                                />
+                            )}
+                        />
+
+                        <ErrorMessage message={errors.careerOrientation?.message} />
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-y-1">
+                    <label htmlFor="description" className="text-sm text-gray-950">
+                        Description
+                    </label>
+                    <div className="flex flex-col">
+                        <Controller
+                            control={control}
+                            name="description"
+                            render={({ field }) => (
+                                <Input.TextArea
+                                    id="description"
+                                    {...field}
+                                    placeholder="Enter your description"
+                                    className="w-full"
+                                    status={errors.description ? 'error' : undefined}
+                                />
+                            )}
+                        />
+
+                        <ErrorMessage message={errors.description?.message} />
+                    </div>
                 </div>
 
                 <Button type="primary" htmlType="submit">

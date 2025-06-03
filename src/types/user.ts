@@ -13,6 +13,8 @@ export interface IUser {
     avatar?: string;
     education?: string;
     skills?: ISkill[];
+    dateOfBirth?: Date;
+    description?: string;
     isOpenToOffer?: boolean;
     createdAt: Date;
     updatedAt: Date;

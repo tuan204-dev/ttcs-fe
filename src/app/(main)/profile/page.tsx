@@ -2,21 +2,26 @@
 import { GenderLabel } from '@/constants/enum';
 import { useAppSelector } from '@/redux/store';
 import { formatPhoneNumber } from '@/utils/phone';
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { FaBehance, FaDownload, FaLinkedin, FaPencilAlt } from 'react-icons/fa';
 
 const ProfilePage = () => {
     const loginUser = useAppSelector((state) => state.auth.user);
 
+    console.log('loginUser', loginUser)
+
     return (
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Header Section */}
             <div className="text-center mb-8">
                 <div className="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-4 overflow-hidden">
-                    <img
+                    <Image
                         src="https://avatar.iran.liara.run/public/35"
                         alt="Profile photo"
                         className="w-full h-full object-cover"
+                        width={128}
+                        height={128}
                     />
                 </div>
                 <h1 className="text-2xl font-medium text-gray-800">{`${loginUser?.firstName} ${loginUser?.lastName}`}</h1>
