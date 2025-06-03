@@ -35,7 +35,7 @@ const LoginPage = () => {
     const onSubmit = async (data: LoginFormData) => {
         try {
             const {
-                data: { accessToken, refreshToken, user },
+                data: { accessToken, refreshToken, worker },
                 success,
             } = await AuthServices.login({
                 email: data.email,
@@ -47,7 +47,7 @@ const LoginPage = () => {
                 return;
             }
 
-            dispatch(updateUser(user));
+            dispatch(updateUser(worker));
 
             setCookie(COOKIES_ACCESS_TOKEN, accessToken);
             setCookie(COOKIES_REFRESH_TOKEN, refreshToken);

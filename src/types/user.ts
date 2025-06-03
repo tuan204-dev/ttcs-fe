@@ -15,6 +15,7 @@ export interface IUser {
     skills?: ISkill[];
     dateOfBirth?: Date;
     description?: string;
+    careerOrientation?: string;
     isOpenToOffer?: boolean;
     createdAt: Date;
     updatedAt: Date;

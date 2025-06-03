@@ -32,7 +32,7 @@ interface ILoginReq {
 interface ILoginRes {
     accessToken: string;
     refreshToken: string;
-    user: IUser;
+    worker: IUser;
 }
 
 const login = async (params: ILoginReq) => {

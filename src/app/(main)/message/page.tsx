@@ -8,6 +8,7 @@ import { updateRecruiting } from '@/redux/slices/recruitingSlice';
 import { useAppSelector } from '@/redux/store';
 import { IRecruiting } from '@/types/job';
 import cn from '@/utils/cn';
+import { isEmpty } from 'lodash';
 import { useDispatch } from 'react-redux';
 
 const ChatPage = () => {
@@ -77,7 +78,7 @@ const ChatPage = () => {
                     ))}
                 </div>
                 {/* Application Progress */}
-                {recruitingDetail && (
+                {!isEmpty(recruitingDetail) && (
                     <div className="p-4 border-t border-gray-200 bg-gray-50">
                         <h3 className="text-sm font-medium text-gray-700 mb-3">Application Progress</h3>
                         <ul className="space-y-2 text-sm text-gray-600">

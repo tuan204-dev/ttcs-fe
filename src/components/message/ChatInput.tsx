@@ -1,7 +1,6 @@
 import JobService from '@/services/jobServices';
 import { scrollToLastMessage } from '@/utils/scrollTo';
 import React, { FC, useState } from 'react';
-import { GoPaperclip } from 'react-icons/go';
 
 interface ChatInputProps {
     refresh?: () => void;
@@ -34,9 +33,9 @@ const ChatInput: FC<ChatInputProps> = ({ refresh, recruitingId }) => {
     return (
         <div className="p-4 border-t border-gray-200 max-w-[900px] mx-auto w-full">
             <div className="flex items-center space-x-2">
-                <button className="p-2 rounded-full text-gray-500 hover:bg-gray-100">
+                {/* <button className="p-2 rounded-full text-gray-500 hover:bg-gray-100">
                     <GoPaperclip />
-                </button>
+                </button> */}
                 <div className="flex-1">
                     <input
                         type="text"

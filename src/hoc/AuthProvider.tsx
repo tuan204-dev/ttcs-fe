@@ -4,12 +4,14 @@ import { updateUser } from '@/redux/slices/authSlice';
 import AuthServices from '@/services/authServices';
 import { Spin } from 'antd';
 import { getCookie, setCookie } from 'cookies-next';
+import { usePathname } from 'next/navigation';
 import { ReactNode, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
+    usePathname()
     const refreshToken = getCookie(COOKIES_REFRESH_TOKEN) as string;
 
     useEffect(() => {
