@@ -1,4 +1,4 @@
-import { IJob } from "./job";
+import { IJob } from './job';
 
 export interface IBookmark {
     _id: string;

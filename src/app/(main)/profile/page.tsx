@@ -1,15 +1,15 @@
-'use client'
-import { GenderLabel } from '@/constants/enum'
-import { useAppSelector } from '@/redux/store'
-import { formatPhoneNumber } from '@/utils/phone'
-import React, { useState } from 'react'
-import { FaBehance, FaDownload, FaLinkedin, FaPencilAlt } from 'react-icons/fa'
+'use client';
+import { GenderLabel } from '@/constants/enum';
+import { useAppSelector } from '@/redux/store';
+import { formatPhoneNumber } from '@/utils/phone';
+import React, { useState } from 'react';
+import { FaBehance, FaDownload, FaLinkedin, FaPencilAlt } from 'react-icons/fa';
 
 const ProfilePage = () => {
-    const loginUser = useAppSelector(state => state.auth.user)
+    const loginUser = useAppSelector((state) => state.auth.user);
 
     return (
-        <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Header Section */}
             <div className="text-center mb-8">
                 <div className="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-4 overflow-hidden">
@@ -25,7 +25,10 @@ const ProfilePage = () => {
                     <span>{loginUser?.location}</span>
                 </div>
                 <div className="mt-2 text-gray-600">
-                    <p>{loginUser?.phone ? `${formatPhoneNumber(loginUser?.phone)} | ` : ''}{loginUser?.email}</p>
+                    <p>
+                        {loginUser?.phone ? `${formatPhoneNumber(loginUser?.phone)} | ` : ''}
+                        {loginUser?.email}
+                    </p>
                 </div>
             </div>
             {/* Career Objective */}
@@ -50,11 +53,9 @@ const ProfilePage = () => {
             {/* Education */}
             <div className="mb-8">
                 <div className="flex items-center mb-4">
-                    <h2 className="border-l-4 border-[#3b82f6] pl-3 text-lg font-medium text-gray-800">
-                        🎓 Education
-                    </h2>
+                    <h2 className="border-l-4 border-[#3b82f6] pl-3 text-lg font-medium text-gray-800">🎓 Education</h2>
                     <button className="ml-2 edit-icon">
-                        <FaPencilAlt className='text-sm' />
+                        <FaPencilAlt className="text-sm" />
                     </button>
                 </div>
                 <div className="space-y-6">
@@ -79,9 +80,7 @@ const ProfilePage = () => {
                         </div>
                         <p className="text-gray-600">Science and Technology Course</p>
                     </div> */}
-                    {
-                        loginUser?.education && <h3 className="font-medium text-gray-800">{loginUser?.education}</h3>
-                    }
+                    {loginUser?.education && <h3 className="font-medium text-gray-800">{loginUser?.education}</h3>}
                 </div>
             </div>
             <div className="border-b border-gray-200 my-8" />
@@ -187,22 +186,18 @@ const ProfilePage = () => {
             {/* Skills */}
             <div className="mb-8">
                 <div className="flex items-center mb-4">
-                    <h2 className="border-l-4 border-[#3b82f6] pl-3 text-lg font-medium text-gray-800">
-                        🛠️ Skills
-                    </h2>
+                    <h2 className="border-l-4 border-[#3b82f6] pl-3 text-lg font-medium text-gray-800">🛠️ Skills</h2>
                     <button className="ml-2 edit-icon">
-                        <FaPencilAlt className='text-sm' />
+                        <FaPencilAlt className="text-sm" />
                     </button>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pl-4">
-                    {
-                        loginUser?.skills?.map((skill, index) => (
-                            <div key={index} className="flex justify-between text-sm mb-1">
-                                <span>{skill.name}</span>
-                                <span>{skill.level}/5</span>
-                            </div>
-                        ))
-                    }
+                    {loginUser?.skills?.map((skill, index) => (
+                        <div key={index} className="flex justify-between text-sm mb-1">
+                            <span>{skill.name}</span>
+                            <span>{skill.level}/5</span>
+                        </div>
+                    ))}
                 </div>
             </div>
             {/* <div className="border-b border-gray-200 my-8" /> */}
@@ -308,7 +303,7 @@ const ProfilePage = () => {
                 </div>
             </div> */}
         </div>
-    )
-}
+    );
+};
 
-export default ProfilePage
+export default ProfilePage;

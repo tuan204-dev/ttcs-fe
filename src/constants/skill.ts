@@ -1,1991 +1,1990 @@
-
 export const SKILLS = [
     {
         id: 1,
-        name: "JavaScript"
+        name: 'JavaScript',
     },
     {
         id: 2,
-        name: "Python"
+        name: 'Python',
     },
     {
         id: 3,
-        name: "Java"
+        name: 'Java',
     },
     {
         id: 4,
-        name: "SQL"
+        name: 'SQL',
     },
     {
         id: 5,
-        name: "HTML/CSS"
+        name: 'HTML/CSS',
     },
     {
         id: 6,
-        name: "ReactJS"
+        name: 'ReactJS',
     },
     {
         id: 7,
-        name: "Node.js"
+        name: 'Node.js',
     },
     {
         id: 8,
-        name: "Angular"
+        name: 'Angular',
     },
     {
         id: 9,
-        name: "C#"
+        name: 'C#',
     },
     {
         id: 10,
-        name: ".NET"
+        name: '.NET',
     },
     {
         id: 11,
-        name: "PHP"
+        name: 'PHP',
     },
     {
         id: 12,
-        name: "TypeScript"
+        name: 'TypeScript',
     },
     {
         id: 13,
-        name: "Laravel"
+        name: 'Laravel',
     },
     {
         id: 14,
-        name: "Ruby on Rails"
+        name: 'Ruby on Rails',
     },
     {
         id: 15,
-        name: "C++"
+        name: 'C++',
     },
     {
         id: 16,
-        name: "Golang"
+        name: 'Golang',
     },
     {
         id: 17,
-        name: "Swift"
+        name: 'Swift',
     },
     {
         id: 18,
-        name: "Kotlin"
+        name: 'Kotlin',
     },
     {
         id: 19,
-        name: "Objective-C"
+        name: 'Objective-C',
     },
     {
         id: 20,
-        name: "Flutter"
+        name: 'Flutter',
     },
     {
         id: 21,
-        name: "Dart"
+        name: 'Dart',
     },
     {
         id: 22,
-        name: "React Native"
+        name: 'React Native',
     },
     {
         id: 23,
-        name: "MongoDB"
+        name: 'MongoDB',
     },
     {
         id: 24,
-        name: "PostgreSQL"
+        name: 'PostgreSQL',
     },
     {
         id: 25,
-        name: "MySQL"
+        name: 'MySQL',
     },
     {
         id: 26,
-        name: "Redis"
+        name: 'Redis',
     },
     {
         id: 27,
-        name: "Docker"
+        name: 'Docker',
     },
     {
         id: 28,
-        name: "Kubernetes"
+        name: 'Kubernetes',
     },
     {
         id: 29,
-        name: "AWS"
+        name: 'AWS',
     },
     {
         id: 30,
-        name: "Azure"
+        name: 'Azure',
     },
     {
         id: 31,
-        name: "Google Cloud Platform"
+        name: 'Google Cloud Platform',
     },
     {
         id: 32,
-        name: "CI/CD"
+        name: 'CI/CD',
     },
     {
         id: 33,
-        name: "Jenkins"
+        name: 'Jenkins',
     },
     {
         id: 34,
-        name: "Git"
+        name: 'Git',
     },
     {
         id: 35,
-        name: "Linux"
+        name: 'Linux',
     },
     {
         id: 36,
-        name: "System Administration"
+        name: 'System Administration',
     },
     {
         id: 37,
-        name: "Network Security"
+        name: 'Network Security',
     },
     {
         id: 38,
-        name: "Firewall Management"
+        name: 'Firewall Management',
     },
     {
         id: 39,
-        name: "Penetration Testing"
+        name: 'Penetration Testing',
     },
     {
         id: 40,
-        name: "Cybersecurity"
+        name: 'Cybersecurity',
     },
     {
         id: 41,
-        name: "UI/UX Design"
+        name: 'UI/UX Design',
     },
     {
         id: 42,
-        name: "Figma"
+        name: 'Figma',
     },
     {
         id: 43,
-        name: "Adobe Photoshop"
+        name: 'Adobe Photoshop',
     },
     {
         id: 44,
-        name: "Adobe Illustrator"
+        name: 'Adobe Illustrator',
     },
     {
         id: 45,
-        name: "Sketch"
+        name: 'Sketch',
     },
     {
         id: 46,
-        name: "InVision"
+        name: 'InVision',
     },
     {
         id: 47,
-        name: "Zeplin"
+        name: 'Zeplin',
     },
     {
         id: 48,
-        name: "Wireframing"
+        name: 'Wireframing',
     },
     {
         id: 49,
-        name: "Prototyping"
+        name: 'Prototyping',
     },
     {
         id: 50,
-        name: "User Research"
+        name: 'User Research',
     },
     {
         id: 51,
-        name: "Project Management"
+        name: 'Project Management',
     },
     {
         id: 52,
-        name: "Agile Methodologies"
+        name: 'Agile Methodologies',
     },
     {
         id: 53,
-        name: "Scrum"
+        name: 'Scrum',
     },
     {
         id: 54,
-        name: "Kanban"
+        name: 'Kanban',
     },
     {
         id: 55,
-        name: "Waterfall Model"
+        name: 'Waterfall Model',
     },
     {
         id: 56,
-        name: "Risk Management"
+        name: 'Risk Management',
     },
     {
         id: 57,
-        name: "Time Management"
+        name: 'Time Management',
     },
     {
         id: 58,
-        name: "Budgeting"
+        name: 'Budgeting',
     },
     {
         id: 59,
-        name: "Stakeholder Management"
+        name: 'Stakeholder Management',
     },
     {
         id: 60,
-        name: "Communication Skills"
+        name: 'Communication Skills',
     },
     {
         id: 61,
-        name: "Leadership"
+        name: 'Leadership',
     },
     {
         id: 62,
-        name: "Teamwork"
+        name: 'Teamwork',
     },
     {
         id: 63,
-        name: "Problem Solving"
+        name: 'Problem Solving',
     },
     {
         id: 64,
-        name: "Critical Thinking"
+        name: 'Critical Thinking',
     },
     {
         id: 65,
-        name: "Decision Making"
+        name: 'Decision Making',
     },
     {
         id: 66,
-        name: "Negotiation"
+        name: 'Negotiation',
     },
     {
         id: 67,
-        name: "Conflict Resolution"
+        name: 'Conflict Resolution',
     },
     {
         id: 68,
-        name: "Adaptability"
+        name: 'Adaptability',
     },
     {
         id: 69,
-        name: "Creativity"
+        name: 'Creativity',
     },
     {
         id: 70,
-        name: "Emotional Intelligence"
+        name: 'Emotional Intelligence',
     },
     {
         id: 71,
-        name: "Customer Service"
+        name: 'Customer Service',
     },
     {
         id: 72,
-        name: "Sales"
+        name: 'Sales',
     },
     {
         id: 73,
-        name: "Marketing"
+        name: 'Marketing',
     },
     {
         id: 74,
-        name: "Digital Marketing"
+        name: 'Digital Marketing',
     },
     {
         id: 75,
-        name: "Content Creation"
+        name: 'Content Creation',
     },
     {
         id: 76,
-        name: "SEO"
+        name: 'SEO',
     },
     {
         id: 77,
-        name: "SEM"
+        name: 'SEM',
     },
     {
         id: 78,
-        name: "Social Media Management"
+        name: 'Social Media Management',
     },
     {
         id: 79,
-        name: "Email Marketing"
+        name: 'Email Marketing',
     },
     {
         id: 80,
-        name: "Copywriting"
+        name: 'Copywriting',
     },
     {
         id: 81,
-        name: "Data Analysis"
+        name: 'Data Analysis',
     },
     {
         id: 82,
-        name: "Data Visualization"
+        name: 'Data Visualization',
     },
     {
         id: 83,
-        name: "Business Intelligence"
+        name: 'Business Intelligence',
     },
     {
         id: 84,
-        name: "Excel"
+        name: 'Excel',
     },
     {
         id: 85,
-        name: "Tableau"
+        name: 'Tableau',
     },
     {
         id: 86,
-        name: "Power BI"
+        name: 'Power BI',
     },
     {
         id: 87,
-        name: "SPSS"
+        name: 'SPSS',
     },
     {
         id: 88,
-        name: "R Programming"
+        name: 'R Programming',
     },
     {
         id: 89,
-        name: "Machine Learning"
+        name: 'Machine Learning',
     },
     {
         id: 90,
-        name: "Artificial Intelligence"
+        name: 'Artificial Intelligence',
     },
     {
         id: 91,
-        name: "Deep Learning"
+        name: 'Deep Learning',
     },
     {
         id: 92,
-        name: "Natural Language Processing"
+        name: 'Natural Language Processing',
     },
     {
         id: 93,
-        name: "Computer Vision"
+        name: 'Computer Vision',
     },
     {
         id: 94,
-        name: "TensorFlow"
+        name: 'TensorFlow',
     },
     {
         id: 95,
-        name: "PyTorch"
+        name: 'PyTorch',
     },
     {
         id: 96,
-        name: "OpenCV"
+        name: 'OpenCV',
     },
     {
         id: 97,
-        name: "Scikit-learn"
+        name: 'Scikit-learn',
     },
     {
         id: 98,
-        name: "Pandas"
+        name: 'Pandas',
     },
     {
         id: 99,
-        name: "NumPy"
+        name: 'NumPy',
     },
     {
         id: 100,
-        name: "Matplotlib"
+        name: 'Matplotlib',
     },
     {
         id: 101,
-        name: "Strategic Planning"
+        name: 'Strategic Planning',
     },
     {
         id: 102,
-        name: "Operational Management"
+        name: 'Operational Management',
     },
     {
         id: 103,
-        name: "Human Resource Management"
+        name: 'Human Resource Management',
     },
     {
         id: 104,
-        name: "Performance Evaluation"
+        name: 'Performance Evaluation',
     },
     {
         id: 105,
-        name: "OKR/KPI Management"
+        name: 'OKR/KPI Management',
     },
     {
         id: 106,
-        name: "Team Motivation"
+        name: 'Team Motivation',
     },
     {
         id: 107,
-        name: "Resource Allocation"
+        name: 'Resource Allocation',
     },
     {
         id: 108,
-        name: "Change Management"
+        name: 'Change Management',
     },
     {
         id: 109,
-        name: "Talent Acquisition"
+        name: 'Talent Acquisition',
     },
     {
         id: 110,
-        name: "Recruitment"
+        name: 'Recruitment',
     },
     {
         id: 111,
-        name: "Onboarding"
+        name: 'Onboarding',
     },
     {
         id: 112,
-        name: "Employee Engagement"
+        name: 'Employee Engagement',
     },
     {
         id: 113,
-        name: "Payroll Management"
+        name: 'Payroll Management',
     },
     {
         id: 114,
-        name: "Compensation and Benefits"
+        name: 'Compensation and Benefits',
     },
     {
         id: 115,
-        name: "Organizational Development"
+        name: 'Organizational Development',
     },
     {
         id: 116,
-        name: "Succession Planning"
+        name: 'Succession Planning',
     },
     {
         id: 117,
-        name: "Workforce Planning"
+        name: 'Workforce Planning',
     },
     {
         id: 118,
-        name: "Employee Relations"
+        name: 'Employee Relations',
     },
     {
         id: 119,
-        name: "Labor Law Compliance"
+        name: 'Labor Law Compliance',
     },
     {
         id: 120,
-        name: "Conflict Mediation"
+        name: 'Conflict Mediation',
     },
     {
         id: 121,
-        name: "Disciplinary Procedures"
+        name: 'Disciplinary Procedures',
     },
     {
         id: 122,
-        name: "Training and Development"
+        name: 'Training and Development',
     },
     {
         id: 123,
-        name: "Learning Management"
+        name: 'Learning Management',
     },
     {
         id: 124,
-        name: "Mentoring"
+        name: 'Mentoring',
     },
     {
         id: 125,
-        name: "Coaching"
+        name: 'Coaching',
     },
     {
         id: 126,
-        name: "Public Speaking"
+        name: 'Public Speaking',
     },
     {
         id: 127,
-        name: "Presentation Skills"
+        name: 'Presentation Skills',
     },
     {
         id: 128,
-        name: "Workshop Facilitation"
+        name: 'Workshop Facilitation',
     },
     {
         id: 129,
-        name: "Stakeholder Analysis"
+        name: 'Stakeholder Analysis',
     },
     {
         id: 130,
-        name: "Stakeholder Communication"
+        name: 'Stakeholder Communication',
     },
     {
         id: 131,
-        name: "Company Culture"
+        name: 'Company Culture',
     },
     {
         id: 132,
-        name: "Business Ethics"
+        name: 'Business Ethics',
     },
     {
         id: 133,
-        name: "Diversity and Inclusion"
+        name: 'Diversity and Inclusion',
     },
     {
         id: 134,
-        name: "Corporate Social Responsibility"
+        name: 'Corporate Social Responsibility',
     },
     {
         id: 135,
-        name: "Crisis Management"
+        name: 'Crisis Management',
     },
     {
         id: 136,
-        name: "Business Continuity"
+        name: 'Business Continuity',
     },
     {
         id: 137,
-        name: "Supply Chain Management"
+        name: 'Supply Chain Management',
     },
     {
         id: 138,
-        name: "Logistics Management"
+        name: 'Logistics Management',
     },
     {
         id: 139,
-        name: "Procurement"
+        name: 'Procurement',
     },
     {
         id: 140,
-        name: "Vendor Management"
+        name: 'Vendor Management',
     },
     {
         id: 141,
-        name: "Contract Negotiation"
+        name: 'Contract Negotiation',
     },
     {
         id: 142,
-        name: "Office Administration"
+        name: 'Office Administration',
     },
     {
         id: 143,
-        name: "Clerical Skills"
+        name: 'Clerical Skills',
     },
     {
         id: 144,
-        name: "Calendar Management"
+        name: 'Calendar Management',
     },
     {
         id: 145,
-        name: "Travel Arrangements"
+        name: 'Travel Arrangements',
     },
     {
         id: 146,
-        name: "Filing and Documentation"
+        name: 'Filing and Documentation',
     },
     {
         id: 147,
-        name: "Document Control"
+        name: 'Document Control',
     },
     {
         id: 148,
-        name: "Data Entry"
+        name: 'Data Entry',
     },
     {
         id: 149,
-        name: "Record Keeping"
+        name: 'Record Keeping',
     },
     {
         id: 150,
-        name: "Correspondence"
+        name: 'Correspondence',
     },
     {
         id: 151,
-        name: "Minutes Taking"
+        name: 'Minutes Taking',
     },
     {
         id: 152,
-        name: "Report Writing"
+        name: 'Report Writing',
     },
     {
         id: 153,
-        name: "Meeting Coordination"
+        name: 'Meeting Coordination',
     },
     {
         id: 154,
-        name: "Customer Support"
+        name: 'Customer Support',
     },
     {
         id: 155,
-        name: "Call Handling"
+        name: 'Call Handling',
     },
     {
         id: 156,
-        name: "Receptionist Duties"
+        name: 'Receptionist Duties',
     },
     {
         id: 157,
-        name: "Mail Management"
+        name: 'Mail Management',
     },
     {
         id: 158,
-        name: "Office Equipment Handling"
+        name: 'Office Equipment Handling',
     },
     {
         id: 159,
-        name: "Inventory Management"
+        name: 'Inventory Management',
     },
     {
         id: 160,
-        name: "Asset Management"
+        name: 'Asset Management',
     },
     {
         id: 161,
-        name: "Facility Management"
+        name: 'Facility Management',
     },
     {
         id: 162,
-        name: "Budget Tracking"
+        name: 'Budget Tracking',
     },
     {
         id: 163,
-        name: "Invoice Processing"
+        name: 'Invoice Processing',
     },
     {
         id: 164,
-        name: "Order Management"
+        name: 'Order Management',
     },
     {
         id: 165,
-        name: "Supplier Coordination"
+        name: 'Supplier Coordination',
     },
     {
         id: 166,
-        name: "Billing"
+        name: 'Billing',
     },
     {
         id: 167,
-        name: "Bookkeeping"
+        name: 'Bookkeeping',
     },
     {
         id: 168,
-        name: "Purchase Order Management"
+        name: 'Purchase Order Management',
     },
     {
         id: 169,
-        name: "Shipping and Receiving"
+        name: 'Shipping and Receiving',
     },
     {
         id: 170,
-        name: "Expense Reporting"
+        name: 'Expense Reporting',
     },
     {
         id: 171,
-        name: "Fleet Management"
+        name: 'Fleet Management',
     },
     {
         id: 172,
-        name: "Visitor Management"
+        name: 'Visitor Management',
     },
     {
         id: 173,
-        name: "Event Planning"
+        name: 'Event Planning',
     },
     {
         id: 174,
-        name: "Event Coordination"
+        name: 'Event Coordination',
     },
     {
         id: 175,
-        name: "Business Travel Planning"
+        name: 'Business Travel Planning',
     },
     {
         id: 176,
-        name: "Workspace Optimization"
+        name: 'Workspace Optimization',
     },
     {
         id: 177,
-        name: "Health and Safety Compliance"
+        name: 'Health and Safety Compliance',
     },
     {
         id: 178,
-        name: "Work Permit Management"
+        name: 'Work Permit Management',
     },
     {
         id: 179,
-        name: "Visa Processing"
+        name: 'Visa Processing',
     },
     {
         id: 180,
-        name: "Corporate Communications"
+        name: 'Corporate Communications',
     },
     {
         id: 181,
-        name: "Financial Analysis"
+        name: 'Financial Analysis',
     },
     {
         id: 182,
-        name: "Financial Reporting"
+        name: 'Financial Reporting',
     },
     {
         id: 183,
-        name: "Financial Modeling"
+        name: 'Financial Modeling',
     },
     {
         id: 184,
-        name: "Budget Forecasting"
+        name: 'Budget Forecasting',
     },
     {
         id: 185,
-        name: "Cost Control"
+        name: 'Cost Control',
     },
     {
         id: 186,
-        name: "Expense Analysis"
+        name: 'Expense Analysis',
     },
     {
         id: 187,
-        name: "Account Reconciliation"
+        name: 'Account Reconciliation',
     },
     {
         id: 188,
-        name: "Accounts Payable"
+        name: 'Accounts Payable',
     },
     {
         id: 189,
-        name: "Accounts Receivable"
+        name: 'Accounts Receivable',
     },
     {
         id: 190,
-        name: "General Ledger"
+        name: 'General Ledger',
     },
     {
         id: 191,
-        name: "Payroll Processing"
+        name: 'Payroll Processing',
     },
     {
         id: 192,
-        name: "Tax Preparation"
+        name: 'Tax Preparation',
     },
     {
         id: 193,
-        name: "Tax Filing"
+        name: 'Tax Filing',
     },
     {
         id: 194,
-        name: "Audit Support"
+        name: 'Audit Support',
     },
     {
         id: 195,
-        name: "Internal Audit"
+        name: 'Internal Audit',
     },
     {
         id: 196,
-        name: "External Audit"
+        name: 'External Audit',
     },
     {
         id: 197,
-        name: "Bank Reconciliation"
+        name: 'Bank Reconciliation',
     },
     {
         id: 198,
-        name: "Fixed Asset Management"
+        name: 'Fixed Asset Management',
     },
     {
         id: 199,
-        name: "Treasury Management"
+        name: 'Treasury Management',
     },
     {
         id: 200,
-        name: "Cash Flow Management"
+        name: 'Cash Flow Management',
     },
     {
         id: 201,
-        name: "Credit Control"
+        name: 'Credit Control',
     },
     {
         id: 202,
-        name: "Risk Assessment"
+        name: 'Risk Assessment',
     },
     {
         id: 203,
-        name: "Investment Analysis"
+        name: 'Investment Analysis',
     },
     {
         id: 204,
-        name: "Fund Management"
+        name: 'Fund Management',
     },
     {
         id: 205,
-        name: "Securities Analysis"
+        name: 'Securities Analysis',
     },
     {
         id: 206,
-        name: "Portfolio Management"
+        name: 'Portfolio Management',
     },
     {
         id: 207,
-        name: "Stock Trading"
+        name: 'Stock Trading',
     },
     {
         id: 208,
-        name: "Derivatives Trading"
+        name: 'Derivatives Trading',
     },
     {
         id: 209,
-        name: "Corporate Finance"
+        name: 'Corporate Finance',
     },
     {
         id: 210,
-        name: "Mergers and Acquisitions"
+        name: 'Mergers and Acquisitions',
     },
     {
         id: 211,
-        name: "Due Diligence"
+        name: 'Due Diligence',
     },
     {
         id: 212,
-        name: "Financial Compliance"
+        name: 'Financial Compliance',
     },
     {
         id: 213,
-        name: "Regulatory Reporting"
+        name: 'Regulatory Reporting',
     },
     {
         id: 214,
-        name: "IFRS"
+        name: 'IFRS',
     },
     {
         id: 215,
-        name: "GAAP"
+        name: 'GAAP',
     },
     {
         id: 216,
-        name: "Budget Implementation"
+        name: 'Budget Implementation',
     },
     {
         id: 217,
-        name: "Financial Planning"
+        name: 'Financial Planning',
     },
     {
         id: 218,
-        name: "Loan Processing"
+        name: 'Loan Processing',
     },
     {
         id: 219,
-        name: "Grants Management"
+        name: 'Grants Management',
     },
     {
         id: 220,
-        name: "Cost Accounting"
+        name: 'Cost Accounting',
     },
     {
         id: 221,
-        name: "Production Planning"
+        name: 'Production Planning',
     },
     {
         id: 222,
-        name: "Production Scheduling"
+        name: 'Production Scheduling',
     },
     {
         id: 223,
-        name: "Lean Manufacturing"
+        name: 'Lean Manufacturing',
     },
     {
         id: 224,
-        name: "Six Sigma"
+        name: 'Six Sigma',
     },
     {
         id: 225,
-        name: "Quality Assurance"
+        name: 'Quality Assurance',
     },
     {
         id: 226,
-        name: "Quality Control"
+        name: 'Quality Control',
     },
     {
         id: 227,
-        name: "Process Optimization"
+        name: 'Process Optimization',
     },
     {
         id: 228,
-        name: "Process Improvement"
+        name: 'Process Improvement',
     },
     {
         id: 229,
-        name: "Industrial Engineering"
+        name: 'Industrial Engineering',
     },
     {
         id: 230,
-        name: "Mechanical Engineering"
+        name: 'Mechanical Engineering',
     },
     {
         id: 231,
-        name: "Electrical Engineering"
+        name: 'Electrical Engineering',
     },
     {
         id: 232,
-        name: "Automation"
+        name: 'Automation',
     },
     {
         id: 233,
-        name: "PLC Programming"
+        name: 'PLC Programming',
     },
     {
         id: 234,
-        name: "CAD Design"
+        name: 'CAD Design',
     },
     {
         id: 235,
-        name: "CAM Programming"
+        name: 'CAM Programming',
     },
     {
         id: 236,
-        name: "Maintenance Planning"
+        name: 'Maintenance Planning',
     },
     {
         id: 237,
-        name: "Equipment Maintenance"
+        name: 'Equipment Maintenance',
     },
     {
         id: 238,
-        name: "Root Cause Analysis"
+        name: 'Root Cause Analysis',
     },
     {
         id: 239,
-        name: "Failure Analysis"
+        name: 'Failure Analysis',
     },
     {
         id: 240,
-        name: "Preventive Maintenance"
+        name: 'Preventive Maintenance',
     },
     {
         id: 241,
-        name: "Predictive Maintenance"
+        name: 'Predictive Maintenance',
     },
     {
         id: 242,
-        name: "Safety Management"
+        name: 'Safety Management',
     },
     {
         id: 243,
-        name: "Workplace Safety"
+        name: 'Workplace Safety',
     },
     {
         id: 244,
-        name: "5S Methodology"
+        name: '5S Methodology',
     },
     {
         id: 245,
-        name: "Kaizen"
+        name: 'Kaizen',
     },
     {
         id: 246,
-        name: "TPM"
+        name: 'TPM',
     },
     {
         id: 247,
-        name: "GMP Compliance"
+        name: 'GMP Compliance',
     },
     {
         id: 248,
-        name: "ISO Standards"
+        name: 'ISO Standards',
     },
     {
         id: 249,
-        name: "Calibration"
+        name: 'Calibration',
     },
     {
         id: 250,
-        name: "Technical Documentation"
+        name: 'Technical Documentation',
     },
     {
         id: 251,
-        name: "Material Handling"
+        name: 'Material Handling',
     },
     {
         id: 252,
-        name: "Warehouse Management"
+        name: 'Warehouse Management',
     },
     {
         id: 253,
-        name: "Inventory Control"
+        name: 'Inventory Control',
     },
     {
         id: 254,
-        name: "Supply Chain Optimization"
+        name: 'Supply Chain Optimization',
     },
     {
         id: 255,
-        name: "Order Fulfillment"
+        name: 'Order Fulfillment',
     },
     {
         id: 256,
-        name: "Packing and Labeling"
+        name: 'Packing and Labeling',
     },
     {
         id: 257,
-        name: "Logistics Coordination"
+        name: 'Logistics Coordination',
     },
     {
         id: 258,
-        name: "Patient Care"
+        name: 'Patient Care',
     },
     {
         id: 259,
-        name: "First Aid"
+        name: 'First Aid',
     },
     {
         id: 260,
-        name: "CPR"
+        name: 'CPR',
     },
     {
         id: 261,
-        name: "Emergency Response"
+        name: 'Emergency Response',
     },
     {
         id: 262,
-        name: "Medical Terminology"
+        name: 'Medical Terminology',
     },
     {
         id: 263,
-        name: "Nursing Skills"
+        name: 'Nursing Skills',
     },
     {
         id: 264,
-        name: "Pharmacy Management"
+        name: 'Pharmacy Management',
     },
     {
         id: 265,
-        name: "Medication Administration"
+        name: 'Medication Administration',
     },
     {
         id: 266,
-        name: "Medical Record Keeping"
+        name: 'Medical Record Keeping',
     },
     {
         id: 267,
-        name: "Health Assessment"
+        name: 'Health Assessment',
     },
     {
         id: 268,
-        name: "Clinical Research"
+        name: 'Clinical Research',
     },
     {
         id: 269,
-        name: "Blood Collection"
+        name: 'Blood Collection',
     },
     {
         id: 270,
-        name: "Specimen Handling"
+        name: 'Specimen Handling',
     },
     {
         id: 271,
-        name: "Infection Control"
+        name: 'Infection Control',
     },
     {
         id: 272,
-        name: "Medical Equipment Operation"
+        name: 'Medical Equipment Operation',
     },
     {
         id: 273,
-        name: "Medical Imaging"
+        name: 'Medical Imaging',
     },
     {
         id: 274,
-        name: "X-ray Operation"
+        name: 'X-ray Operation',
     },
     {
         id: 275,
-        name: "Ultrasound"
+        name: 'Ultrasound',
     },
     {
         id: 276,
-        name: "ECG Operation"
+        name: 'ECG Operation',
     },
     {
         id: 277,
-        name: "Physical Therapy"
+        name: 'Physical Therapy',
     },
     {
         id: 278,
-        name: "Occupational Therapy"
+        name: 'Occupational Therapy',
     },
     {
         id: 279,
-        name: "Dental Assisting"
+        name: 'Dental Assisting',
     },
     {
         id: 280,
-        name: "Lab Technician Skills"
+        name: 'Lab Technician Skills',
     },
     {
         id: 281,
-        name: "Dietary Counseling"
+        name: 'Dietary Counseling',
     },
     {
         id: 282,
-        name: "Nutrition Planning"
+        name: 'Nutrition Planning',
     },
     {
         id: 283,
-        name: "Patient Counseling"
+        name: 'Patient Counseling',
     },
     {
         id: 284,
-        name: "Case Management"
+        name: 'Case Management',
     },
     {
         id: 285,
-        name: "Epidemiology"
+        name: 'Epidemiology',
     },
     {
         id: 286,
-        name: "Vaccination"
+        name: 'Vaccination',
     },
     {
         id: 287,
-        name: "Home Healthcare"
+        name: 'Home Healthcare',
     },
     {
         id: 288,
-        name: "Geriatric Care"
+        name: 'Geriatric Care',
     },
     {
         id: 289,
-        name: "Pediatric Care"
+        name: 'Pediatric Care',
     },
     {
         id: 290,
-        name: "Surgical Assisting"
+        name: 'Surgical Assisting',
     },
     {
         id: 291,
-        name: "Medical Billing"
+        name: 'Medical Billing',
     },
     {
         id: 292,
-        name: "Medical Coding"
+        name: 'Medical Coding',
     },
     {
         id: 293,
-        name: "Insurance Claims"
+        name: 'Insurance Claims',
     },
     {
         id: 294,
-        name: "Medical Scheduling"
+        name: 'Medical Scheduling',
     },
     {
         id: 295,
-        name: "Healthcare Compliance"
+        name: 'Healthcare Compliance',
     },
     {
         id: 296,
-        name: "HIPAA Compliance"
+        name: 'HIPAA Compliance',
     },
     {
         id: 297,
-        name: "Medical Transcription"
+        name: 'Medical Transcription',
     },
     {
         id: 298,
-        name: "Telemedicine Support"
+        name: 'Telemedicine Support',
     },
     {
         id: 299,
-        name: "Teaching"
+        name: 'Teaching',
     },
     {
         id: 300,
-        name: "Lesson Planning"
+        name: 'Lesson Planning',
     },
     {
         id: 301,
-        name: "Classroom Management"
+        name: 'Classroom Management',
     },
     {
         id: 302,
-        name: "Student Assessment"
+        name: 'Student Assessment',
     },
     {
         id: 303,
-        name: "Curriculum Development"
+        name: 'Curriculum Development',
     },
     {
         id: 304,
-        name: "Instructional Design"
+        name: 'Instructional Design',
     },
     {
         id: 305,
-        name: "Educational Technology"
+        name: 'Educational Technology',
     },
     {
         id: 306,
-        name: "E-learning"
+        name: 'E-learning',
     },
     {
         id: 307,
-        name: "Online Teaching"
+        name: 'Online Teaching',
     },
     {
         id: 308,
-        name: "Exam Proctoring"
+        name: 'Exam Proctoring',
     },
     {
         id: 309,
-        name: "Academic Advising"
+        name: 'Academic Advising',
     },
     {
         id: 310,
-        name: "Tutoring"
+        name: 'Tutoring',
     },
     {
         id: 311,
-        name: "Mentoring Students"
+        name: 'Mentoring Students',
     },
     {
         id: 312,
-        name: "Learning Assessment"
+        name: 'Learning Assessment',
     },
     {
         id: 313,
-        name: "Special Education"
+        name: 'Special Education',
     },
     {
         id: 314,
-        name: "Counseling"
+        name: 'Counseling',
     },
     {
         id: 315,
-        name: "Educational Research"
+        name: 'Educational Research',
     },
     {
         id: 316,
-        name: "Workshop Delivery"
+        name: 'Workshop Delivery',
     },
     {
         id: 317,
-        name: "STEM Education"
+        name: 'STEM Education',
     },
     {
         id: 318,
-        name: "Language Teaching"
+        name: 'Language Teaching',
     },
     {
         id: 319,
-        name: "English as a Second Language"
+        name: 'English as a Second Language',
     },
     {
         id: 320,
-        name: "Early Childhood Education"
+        name: 'Early Childhood Education',
     },
     {
         id: 321,
-        name: "Primary Education"
+        name: 'Primary Education',
     },
     {
         id: 322,
-        name: "Secondary Education"
+        name: 'Secondary Education',
     },
     {
         id: 323,
-        name: "University Teaching"
+        name: 'University Teaching',
     },
     {
         id: 324,
-        name: "Adult Education"
+        name: 'Adult Education',
     },
     {
         id: 325,
-        name: "Corporate Training"
+        name: 'Corporate Training',
     },
     {
         id: 326,
-        name: "Soft Skills Training"
+        name: 'Soft Skills Training',
     },
     {
         id: 327,
-        name: "Vocational Training"
+        name: 'Vocational Training',
     },
     {
         id: 328,
-        name: "Distance Learning"
+        name: 'Distance Learning',
     },
     {
         id: 329,
-        name: "Literacy Programs"
+        name: 'Literacy Programs',
     },
     {
         id: 330,
-        name: "Educational Administration"
+        name: 'Educational Administration',
     },
     {
         id: 331,
-        name: "School Management"
+        name: 'School Management',
     },
     {
         id: 332,
-        name: "Course Design"
+        name: 'Course Design',
     },
     {
         id: 333,
-        name: "Curriculum Mapping"
+        name: 'Curriculum Mapping',
     },
     {
         id: 334,
-        name: "Testing and Evaluation"
+        name: 'Testing and Evaluation',
     },
     {
         id: 335,
-        name: "Education Policy"
+        name: 'Education Policy',
     },
     {
         id: 336,
-        name: "Student Recruitment"
+        name: 'Student Recruitment',
     },
     {
         id: 337,
-        name: "Student Retention"
+        name: 'Student Retention',
     },
     {
         id: 338,
-        name: "English"
+        name: 'English',
     },
     {
         id: 339,
-        name: "Vietnamese"
+        name: 'Vietnamese',
     },
     {
         id: 340,
-        name: "Chinese"
+        name: 'Chinese',
     },
     {
         id: 341,
-        name: "Japanese"
+        name: 'Japanese',
     },
     {
         id: 342,
-        name: "Korean"
+        name: 'Korean',
     },
     {
         id: 343,
-        name: "French"
+        name: 'French',
     },
     {
         id: 344,
-        name: "German"
+        name: 'German',
     },
     {
         id: 345,
-        name: "Spanish"
+        name: 'Spanish',
     },
     {
         id: 346,
-        name: "Russian"
+        name: 'Russian',
     },
     {
         id: 347,
-        name: "Italian"
+        name: 'Italian',
     },
     {
         id: 348,
-        name: "Portuguese"
+        name: 'Portuguese',
     },
     {
         id: 349,
-        name: "Arabic"
+        name: 'Arabic',
     },
     {
         id: 350,
-        name: "Thai"
+        name: 'Thai',
     },
     {
         id: 351,
-        name: "Indonesian"
+        name: 'Indonesian',
     },
     {
         id: 352,
-        name: "Hindi"
+        name: 'Hindi',
     },
     {
         id: 353,
-        name: "Lao"
+        name: 'Lao',
     },
     {
         id: 354,
-        name: "Khmer"
+        name: 'Khmer',
     },
     {
         id: 355,
-        name: "Tagalog"
+        name: 'Tagalog',
     },
     {
         id: 356,
-        name: "Malay"
+        name: 'Malay',
     },
     {
         id: 357,
-        name: "Dutch"
+        name: 'Dutch',
     },
     {
         id: 358,
-        name: "Customer Relationship Management"
+        name: 'Customer Relationship Management',
     },
     {
         id: 359,
-        name: "Client Management"
+        name: 'Client Management',
     },
     {
         id: 360,
-        name: "Order Processing"
+        name: 'Order Processing',
     },
     {
         id: 361,
-        name: "Point of Sale Operation"
+        name: 'Point of Sale Operation',
     },
     {
         id: 362,
-        name: "Upselling"
+        name: 'Upselling',
     },
     {
         id: 363,
-        name: "Cross-selling"
+        name: 'Cross-selling',
     },
     {
         id: 364,
-        name: "Complaint Handling"
+        name: 'Complaint Handling',
     },
     {
         id: 365,
-        name: "Warranty Handling"
+        name: 'Warranty Handling',
     },
     {
         id: 366,
-        name: "Returns Management"
+        name: 'Returns Management',
     },
     {
         id: 367,
-        name: "After-sales Support"
+        name: 'After-sales Support',
     },
     {
         id: 368,
-        name: "Telemarketing"
+        name: 'Telemarketing',
     },
     {
         id: 369,
-        name: "Lead Generation"
+        name: 'Lead Generation',
     },
     {
         id: 370,
-        name: "Market Research"
+        name: 'Market Research',
     },
     {
         id: 371,
-        name: "Competitor Analysis"
+        name: 'Competitor Analysis',
     },
     {
         id: 372,
-        name: "Brand Management"
+        name: 'Brand Management',
     },
     {
         id: 373,
-        name: "Product Demonstration"
+        name: 'Product Demonstration',
     },
     {
         id: 374,
-        name: "Sales Forecasting"
+        name: 'Sales Forecasting',
     },
     {
         id: 375,
-        name: "Sales Reporting"
+        name: 'Sales Reporting',
     },
     {
         id: 376,
-        name: "Retail Sales"
+        name: 'Retail Sales',
     },
     {
         id: 377,
-        name: "E-commerce Management"
+        name: 'E-commerce Management',
     },
     {
         id: 378,
-        name: "Store Management"
+        name: 'Store Management',
     },
     {
         id: 379,
-        name: "Merchandising"
+        name: 'Merchandising',
     },
     {
         id: 380,
-        name: "Inventory Auditing"
+        name: 'Inventory Auditing',
     },
     {
         id: 381,
-        name: "Visual Merchandising"
+        name: 'Visual Merchandising',
     },
     {
         id: 382,
-        name: "Cash Handling"
+        name: 'Cash Handling',
     },
     {
         id: 383,
-        name: "Front Desk Operation"
+        name: 'Front Desk Operation',
     },
     {
         id: 384,
-        name: "Reservation Management"
+        name: 'Reservation Management',
     },
     {
         id: 385,
-        name: "Event Registration"
+        name: 'Event Registration',
     },
     {
         id: 386,
-        name: "Concierge Service"
+        name: 'Concierge Service',
     },
     {
         id: 387,
-        name: "Housekeeping"
+        name: 'Housekeeping',
     },
     {
         id: 388,
-        name: "Food Preparation"
+        name: 'Food Preparation',
     },
     {
         id: 389,
-        name: "Barista Skills"
+        name: 'Barista Skills',
     },
     {
         id: 390,
-        name: "Bartending"
+        name: 'Bartending',
     },
     {
         id: 391,
-        name: "Table Service"
+        name: 'Table Service',
     },
     {
         id: 392,
-        name: "Guest Service"
+        name: 'Guest Service',
     },
     {
         id: 393,
-        name: "Food Safety"
+        name: 'Food Safety',
     },
     {
         id: 394,
-        name: "Sanitation Management"
+        name: 'Sanitation Management',
     },
     {
         id: 395,
-        name: "Hospitality Management"
+        name: 'Hospitality Management',
     },
     {
         id: 396,
-        name: "Tour Guide"
+        name: 'Tour Guide',
     },
     {
         id: 397,
-        name: "Travel Consultancy"
+        name: 'Travel Consultancy',
     },
     {
         id: 398,
-        name: "Flight Booking"
+        name: 'Flight Booking',
     },
     {
         id: 399,
-        name: "Itinerary Planning"
+        name: 'Itinerary Planning',
     },
     {
         id: 400,
-        name: "Photography"
+        name: 'Photography',
     },
     {
         id: 401,
-        name: "Videography"
+        name: 'Videography',
     },
     {
         id: 402,
-        name: "Video Editing"
+        name: 'Video Editing',
     },
     {
         id: 403,
-        name: "Photo Editing"
+        name: 'Photo Editing',
     },
     {
         id: 404,
-        name: "Graphic Design"
+        name: 'Graphic Design',
     },
     {
         id: 405,
-        name: "Motion Graphics"
+        name: 'Motion Graphics',
     },
     {
         id: 406,
-        name: "Animation"
+        name: 'Animation',
     },
     {
         id: 407,
-        name: "3D Modeling"
+        name: '3D Modeling',
     },
     {
         id: 408,
-        name: "2D Illustration"
+        name: '2D Illustration',
     },
     {
         id: 409,
-        name: "Storyboarding"
+        name: 'Storyboarding',
     },
     {
         id: 410,
-        name: "Creative Writing"
+        name: 'Creative Writing',
     },
     {
         id: 411,
-        name: "Scriptwriting"
+        name: 'Scriptwriting',
     },
     {
         id: 412,
-        name: "Music Production"
+        name: 'Music Production',
     },
     {
         id: 413,
-        name: "Audio Editing"
+        name: 'Audio Editing',
     },
     {
         id: 414,
-        name: "Voice Acting"
+        name: 'Voice Acting',
     },
     {
         id: 415,
-        name: "Performing Arts"
+        name: 'Performing Arts',
     },
     {
         id: 416,
-        name: "Acting"
+        name: 'Acting',
     },
     {
         id: 417,
-        name: "Dancing"
+        name: 'Dancing',
     },
     {
         id: 418,
-        name: "Singing"
+        name: 'Singing',
     },
     {
         id: 419,
-        name: "Instrument Playing"
+        name: 'Instrument Playing',
     },
     {
         id: 420,
-        name: "Stage Management"
+        name: 'Stage Management',
     },
     {
         id: 421,
-        name: "Lighting Design"
+        name: 'Lighting Design',
     },
     {
         id: 422,
-        name: "Set Design"
+        name: 'Set Design',
     },
     {
         id: 423,
-        name: "Fashion Design"
+        name: 'Fashion Design',
     },
     {
         id: 424,
-        name: "Styling"
+        name: 'Styling',
     },
     {
         id: 425,
-        name: "Jewelry Design"
+        name: 'Jewelry Design',
     },
     {
         id: 426,
-        name: "Makeup Artistry"
+        name: 'Makeup Artistry',
     },
     {
         id: 427,
-        name: "Hair Styling"
+        name: 'Hair Styling',
     },
     {
         id: 428,
-        name: "Public Relations"
+        name: 'Public Relations',
     },
     {
         id: 429,
-        name: "Media Planning"
+        name: 'Media Planning',
     },
     {
         id: 430,
-        name: "Media Buying"
+        name: 'Media Buying',
     },
     {
         id: 431,
-        name: "Advertising"
+        name: 'Advertising',
     },
     {
         id: 432,
-        name: "Brand Storytelling"
+        name: 'Brand Storytelling',
     },
     {
         id: 433,
-        name: "Press Release Writing"
+        name: 'Press Release Writing',
     },
     {
         id: 434,
-        name: "Event Hosting"
+        name: 'Event Hosting',
     },
     {
         id: 435,
-        name: "MC Skills"
+        name: 'MC Skills',
     },
     {
         id: 436,
-        name: "Copy Editing"
+        name: 'Copy Editing',
     },
     {
         id: 437,
-        name: "Proofreading"
+        name: 'Proofreading',
     },
     {
         id: 438,
-        name: "Book Publishing"
+        name: 'Book Publishing',
     },
     {
         id: 439,
-        name: "Magazine Editing"
+        name: 'Magazine Editing',
     },
     {
         id: 440,
-        name: "Civil Engineering"
+        name: 'Civil Engineering',
     },
     {
         id: 441,
-        name: "Structural Engineering"
+        name: 'Structural Engineering',
     },
     {
         id: 442,
-        name: "Site Supervision"
+        name: 'Site Supervision',
     },
     {
         id: 443,
-        name: "Construction Management"
+        name: 'Construction Management',
     },
     {
         id: 444,
-        name: "AutoCAD"
+        name: 'AutoCAD',
     },
     {
         id: 445,
-        name: "Revit"
+        name: 'Revit',
     },
     {
         id: 446,
-        name: "Building Information Modeling"
+        name: 'Building Information Modeling',
     },
     {
         id: 447,
-        name: "Quantity Surveying"
+        name: 'Quantity Surveying',
     },
     {
         id: 448,
-        name: "Cost Estimation"
+        name: 'Cost Estimation',
     },
     {
         id: 449,
-        name: "Tender Preparation"
+        name: 'Tender Preparation',
     },
     {
         id: 450,
-        name: "Construction Scheduling"
+        name: 'Construction Scheduling',
     },
     {
         id: 451,
-        name: "Safety Supervision"
+        name: 'Safety Supervision',
     },
     {
         id: 452,
-        name: "Land Surveying"
+        name: 'Land Surveying',
     },
     {
         id: 453,
-        name: "Geotechnical Analysis"
+        name: 'Geotechnical Analysis',
     },
     {
         id: 454,
-        name: "Concrete Work"
+        name: 'Concrete Work',
     },
     {
         id: 455,
-        name: "Steel Structure"
+        name: 'Steel Structure',
     },
     {
         id: 456,
-        name: "MEP Coordination"
+        name: 'MEP Coordination',
     },
     {
         id: 457,
-        name: "Plumbing Design"
+        name: 'Plumbing Design',
     },
     {
         id: 458,
-        name: "HVAC Design"
+        name: 'HVAC Design',
     },
     {
         id: 459,
-        name: "Electrical Design"
+        name: 'Electrical Design',
     },
     {
         id: 460,
-        name: "Fire Protection Design"
+        name: 'Fire Protection Design',
     },
     {
         id: 461,
-        name: "Landscape Design"
+        name: 'Landscape Design',
     },
     {
         id: 462,
-        name: "Urban Planning"
+        name: 'Urban Planning',
     },
     {
         id: 463,
-        name: "Project Handover"
+        name: 'Project Handover',
     },
     {
         id: 464,
-        name: "Quality Inspection"
+        name: 'Quality Inspection',
     },
     {
         id: 465,
-        name: "Building Maintenance"
+        name: 'Building Maintenance',
     },
     {
         id: 466,
-        name: "Renovation"
+        name: 'Renovation',
     },
     {
         id: 467,
-        name: "Fit-out Work"
+        name: 'Fit-out Work',
     },
     {
         id: 468,
-        name: "Transportation Management"
+        name: 'Transportation Management',
     },
     {
         id: 469,
-        name: "Route Planning"
+        name: 'Route Planning',
     },
     {
         id: 470,
-        name: "Fleet Management"
+        name: 'Fleet Management',
     },
     {
         id: 471,
-        name: "Vehicle Maintenance"
+        name: 'Vehicle Maintenance',
     },
     {
         id: 472,
-        name: "Shipping Management"
+        name: 'Shipping Management',
     },
     {
         id: 473,
-        name: "Freight Forwarding"
+        name: 'Freight Forwarding',
     },
     {
         id: 474,
-        name: "Customs Clearance"
+        name: 'Customs Clearance',
     },
     {
         id: 475,
-        name: "Import/Export Management"
+        name: 'Import/Export Management',
     },
     {
         id: 476,
-        name: "Documentation"
+        name: 'Documentation',
     },
     {
         id: 477,
-        name: "Warehousing"
+        name: 'Warehousing',
     },
     {
         id: 478,
-        name: "Stock Management"
+        name: 'Stock Management',
     },
     {
         id: 479,
-        name: "Order Tracking"
+        name: 'Order Tracking',
     },
     {
         id: 480,
-        name: "Cold Chain Management"
+        name: 'Cold Chain Management',
     },
     {
         id: 481,
-        name: "Cargo Handling"
+        name: 'Cargo Handling',
     },
     {
         id: 482,
-        name: "Material Planning"
+        name: 'Material Planning',
     },
     {
         id: 483,
-        name: "Inventory Replenishment"
+        name: 'Inventory Replenishment',
     },
     {
         id: 484,
-        name: "RFID Operation"
+        name: 'RFID Operation',
     },
     {
         id: 485,
-        name: "Supply Chain Analysis"
+        name: 'Supply Chain Analysis',
     },
     {
         id: 486,
-        name: "3PL Management"
+        name: '3PL Management',
     },
     {
         id: 487,
-        name: "Last Mile Delivery"
+        name: 'Last Mile Delivery',
     },
     {
         id: 488,
-        name: "Legal Research"
+        name: 'Legal Research',
     },
     {
         id: 489,
-        name: "Contract Drafting"
+        name: 'Contract Drafting',
     },
     {
         id: 490,
-        name: "Intellectual Property"
+        name: 'Intellectual Property',
     },
     {
         id: 491,
-        name: "Litigation Support"
+        name: 'Litigation Support',
     },
     {
         id: 492,
-        name: "Paralegal Skills"
+        name: 'Paralegal Skills',
     },
     {
         id: 493,
-        name: "Risk Compliance"
+        name: 'Risk Compliance',
     },
     {
         id: 494,
-        name: "Environmental Management"
+        name: 'Environmental Management',
     },
     {
         id: 495,
-        name: "Sustainability Planning"
+        name: 'Sustainability Planning',
     },
     {
         id: 496,
-        name: "Grant Writing"
+        name: 'Grant Writing',
     },
     {
         id: 497,
-        name: "Fundraising"
-    }
-]
+        name: 'Fundraising',
+    },
+];

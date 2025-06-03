@@ -1,65 +1,67 @@
-import { JobType } from '@/constants/enum'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Button, Checkbox, Input } from 'antd'
-import { FC } from 'react'
-import { Controller, useForm } from 'react-hook-form'
-import { z } from 'zod'
+import { JobType } from '@/constants/enum';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button, Checkbox, Input } from 'antd';
+import { FC } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { z } from 'zod';
 
-const schema = z.object({
-    title: z.string().optional(),
-    minSalary: z.string().nullable().optional(),
-    maxSalary: z.string().nullable().optional(),
-    jobType: z.array(z.nativeEnum(JobType)).optional()
-}).refine((data) => {
-    if (data.minSalary !== null && data.maxSalary !== null && data.minSalary !== '' && data.maxSalary !== '') {
-        return Number(data.minSalary) <= Number(data.maxSalary);
-    }
-    return true;
-}, {
-    path: ['maxSalary', 'minSalary'],
-    message: 'Max salary must be greater than or equal to min salary',
-})
+const schema = z
+    .object({
+        title: z.string().optional(),
+        minSalary: z.string().nullable().optional(),
+        maxSalary: z.string().nullable().optional(),
+        jobType: z.array(z.nativeEnum(JobType)).optional(),
+    })
+    .refine(
+        (data) => {
+            if (data.minSalary !== null && data.maxSalary !== null && data.minSalary !== '' && data.maxSalary !== '') {
+                return Number(data.minSalary) <= Number(data.maxSalary);
+            }
+            return true;
+        },
+        {
+            path: ['maxSalary', 'minSalary'],
+            message: 'Max salary must be greater than or equal to min salary',
+        }
+    );
 
-export type FilterSchema = z.infer<typeof schema>
+export type FilterSchema = z.infer<typeof schema>;
 
 interface FilterProps {
-    setFilterData: React.Dispatch<React.SetStateAction<any>>
+    setFilterData: React.Dispatch<React.SetStateAction<any>>;
 }
 
 const Filter: FC<FilterProps> = ({ setFilterData }) => {
-    const { control, formState: { errors }, handleSubmit, reset } = useForm<FilterSchema>({
+    const {
+        control,
+        formState: { errors },
+        handleSubmit,
+        reset,
+    } = useForm<FilterSchema>({
         resolver: zodResolver(schema),
         defaultValues: {
             title: '',
             minSalary: null,
             maxSalary: null,
-            jobType: []
-        }
-    })
+            jobType: [],
+        },
+    });
 
     const handleClearFilters = () => {
-        setFilterData({})
-        reset()
-    }
+        setFilterData({});
+        reset();
+    };
 
     return (
         <aside className="w-full lg:w-1/4 bg-white p-6 rounded-xl shadow-md h-fit sticky top-[96px] ">
             <h2 className="text-xl font-semibold mb-6 text-gray-800">Filter Jobs</h2>
             {/* Search */}
             <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Search
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Search</label>
                 <Controller
                     control={control}
                     name="title"
-                    render={({ field }) => (
-                        <Input
-                            {...field}
-                            placeholder="Job title, keywords"
-                            size='large'
-                        />
-                    )}
+                    render={({ field }) => <Input {...field} placeholder="Job title, keywords" size="large" />}
                 />
             </div>
             {/* Job Category */}
@@ -142,10 +144,8 @@ const Filter: FC<FilterProps> = ({ setFilterData }) => {
             </div> */}
             {/* Salary Range */}
             <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Salary Range ($)
-                </label>
-                <div className='grid grid-cols-2 gap-x-4'>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Salary Range ($)</label>
+                <div className="grid grid-cols-2 gap-x-4">
                     <Controller
                         control={control}
                         name="minSalary"
@@ -153,8 +153,8 @@ const Filter: FC<FilterProps> = ({ setFilterData }) => {
                             <Input
                                 {...field}
                                 value={field.value ?? ''}
-                                type='number'
-                                size='large'
+                                type="number"
+                                size="large"
                                 placeholder="Min"
                                 status={errors.minSalary ? 'error' : ''}
                             />
@@ -168,8 +168,8 @@ const Filter: FC<FilterProps> = ({ setFilterData }) => {
                             <Input
                                 {...field}
                                 value={field.value ?? ''}
-                                type='number'
-                                size='large'
+                                type="number"
+                                size="large"
                                 placeholder="Max"
                                 status={errors.maxSalary ? 'error' : ''}
                             />
@@ -179,9 +179,7 @@ const Filter: FC<FilterProps> = ({ setFilterData }) => {
             </div>
             {/* Job Type */}
             <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Job Type
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Job Type</label>
                 <div className="flex flex-col gap-y-2">
                     <Controller
                         control={control}
@@ -189,23 +187,23 @@ const Filter: FC<FilterProps> = ({ setFilterData }) => {
                         render={({ field }) => (
                             <Checkbox.Group
                                 {...field}
-                                className='flex flex-col gap-y-2'
+                                className="flex flex-col gap-y-2"
                                 options={[
                                     {
                                         label: 'Full Time',
-                                        value: JobType.FULL_TIME
+                                        value: JobType.FULL_TIME,
                                     },
                                     {
                                         label: 'Part Time',
-                                        value: JobType.PART_TIME
+                                        value: JobType.PART_TIME,
                                     },
                                     {
                                         label: 'Freelance',
-                                        value: JobType.FREELANCE
+                                        value: JobType.FREELANCE,
                                     },
                                     {
                                         label: 'Contract',
-                                        value: JobType.CONTRACT
+                                        value: JobType.CONTRACT,
                                     },
                                 ]}
                             />
@@ -225,17 +223,15 @@ const Filter: FC<FilterProps> = ({ setFilterData }) => {
                     <span>10+ years</span>
                 </div>
             </div> */}
-            <div className='flex flex-col gap-y-3'>
-                <Button type='primary' onClick={handleSubmit(setFilterData)}>
+            <div className="flex flex-col gap-y-3">
+                <Button type="primary" onClick={handleSubmit(setFilterData)}>
                     Apply Filters
                 </Button>
 
-                <Button onClick={handleClearFilters} >
-                    Clear Filters
-                </Button>
+                <Button onClick={handleClearFilters}>Clear Filters</Button>
             </div>
         </aside>
-    )
-}
+    );
+};
 
-export default Filter
+export default Filter;

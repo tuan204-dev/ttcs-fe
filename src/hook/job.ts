@@ -1,55 +1,62 @@
-import JobService from "@/services/jobServices"
-import { IRecruitingDetail } from "@/types/job"
-import useSWR from "swr"
-
+import JobService from '@/services/jobServices';
+import { IRecruitingDetail } from '@/types/job';
+import useSWR from 'swr';
 
 export const useJobs = (params?: any) => {
-    const { data, error, isLoading, isValidating, mutate } = useSWR(`/job?${JSON.stringify(params)}`, () => JobService.getJobs(params))
+    const { data, error, isLoading, isValidating, mutate } = useSWR(`/job?${JSON.stringify(params)}`, () =>
+        JobService.getJobs(params)
+    );
 
     return {
         jobs: data ?? [],
         error,
         isLoading,
         isValidating,
-        mutate
-    }
-}
+        mutate,
+    };
+};
 
 export const useJobDetail = (jobId: string) => {
-    const { data, error, isLoading, isValidating, mutate } = useSWR(`/job/${jobId}`, () => JobService.getJobDetail(jobId))
+    const { data, error, isLoading, isValidating, mutate } = useSWR(`/job/${jobId}`, () =>
+        JobService.getJobDetail(jobId)
+    );
 
     return {
         job: data,
         error,
         isLoading,
         isValidating,
-        mutate
-    }
-}
+        mutate,
+    };
+};
 
 export const useRecruiting = () => {
-    const { data, error, isLoading, isValidating, mutate } = useSWR('/recruiting', JobService.getAllRecruiting)
+    const { data, error, isLoading, isValidating, mutate } = useSWR('/recruiting', JobService.getAllRecruiting);
 
     return {
         recruiting: data ?? [],
         error,
         isLoading,
         isValidating,
-        mutate
-    }
-}
+        mutate,
+    };
+};
 
 export const useRecruitingDetail = (recruitingId: string) => {
-    const { data, error, isLoading, isValidating, mutate } = useSWR(`/recruiting/${recruitingId}`, () => JobService.getRecruitingDetail(recruitingId), {
-        refreshInterval: 5000, // Refresh every 10 seconds
-        revalidateOnFocus: true
-    })
+    const { data, error, isLoading, isValidating, mutate } = useSWR(
+        `/recruiting/${recruitingId}`,
+        () => JobService.getRecruitingDetail(recruitingId),
+        {
+            refreshInterval: 5000, // Refresh every 10 seconds
+            revalidateOnFocus: true,
+        }
+    );
 
     return {
         recruitingDetail: (data ?? {}) as IRecruitingDetail,
         error,
         isLoading,
         isValidating,
-        mutate
-    }
-}
+        mutate,
+    };
+};

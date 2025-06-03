@@ -1,24 +1,24 @@
-'use client'
+'use client';
 
-import MainChat from '@/components/message/MainChat'
-import RecruitingItem from '@/components/message/RecruitingItem'
-import { RecruitingProgress, RecruitingProgressLabel } from '@/constants/enum'
-import { useRecruiting, useRecruitingDetail } from '@/hook/job'
-import { updateRecruiting } from '@/redux/slices/recruitingSlice'
-import { useAppSelector } from '@/redux/store'
-import { IRecruiting } from '@/types/job'
-import cn from '@/utils/cn'
-import { useDispatch } from 'react-redux'
+import MainChat from '@/components/message/MainChat';
+import RecruitingItem from '@/components/message/RecruitingItem';
+import { RecruitingProgress, RecruitingProgressLabel } from '@/constants/enum';
+import { useRecruiting, useRecruitingDetail } from '@/hook/job';
+import { updateRecruiting } from '@/redux/slices/recruitingSlice';
+import { useAppSelector } from '@/redux/store';
+import { IRecruiting } from '@/types/job';
+import cn from '@/utils/cn';
+import { useDispatch } from 'react-redux';
 
 const ChatPage = () => {
-    const { recruiting } = useRecruiting()
-    const selectedRecruiting = useAppSelector(state => state.recruiting.selectedRecruiting)
-    const { recruitingDetail } = useRecruitingDetail(selectedRecruiting?._id ?? '')
-    const dispatch = useDispatch()
+    const { recruiting } = useRecruiting();
+    const selectedRecruiting = useAppSelector((state) => state.recruiting.selectedRecruiting);
+    const { recruitingDetail } = useRecruitingDetail(selectedRecruiting?._id ?? '');
+    const dispatch = useDispatch();
 
     const handleClickChat = (recruiting: IRecruiting) => {
-        dispatch(updateRecruiting(recruiting))
-    }
+        dispatch(updateRecruiting(recruiting));
+    };
 
     return (
         <div className="flex h-[calc(100vh-64px)] overflow-hidden">
@@ -67,46 +67,51 @@ const ChatPage = () => {
                             </div>
                         </div>
                     </div> */}
-                    {
-                        recruiting?.map((item) => (
-                            <RecruitingItem
-                                key={item._id}
-                                recruiting={item}
-                                onClick={handleClickChat}
-                                isActive={selectedRecruiting?._id === item._id}
-                            />
-                        ))
-                    }
+                    {recruiting?.map((item) => (
+                        <RecruitingItem
+                            key={item._id}
+                            recruiting={item}
+                            onClick={handleClickChat}
+                            isActive={selectedRecruiting?._id === item._id}
+                        />
+                    ))}
                 </div>
                 {/* Application Progress */}
-                {recruitingDetail && <div className="p-4 border-t border-gray-200 bg-gray-50">
-                    <h3 className="text-sm font-medium text-gray-700 mb-3">
-                        Application Progress
-                    </h3>
-                    <ul className="space-y-2 text-sm text-gray-600">
-                        {
-                            Object.entries(RecruitingProgressLabel).map(([key, value]) => {
+                {recruitingDetail && (
+                    <div className="p-4 border-t border-gray-200 bg-gray-50">
+                        <h3 className="text-sm font-medium text-gray-700 mb-3">Application Progress</h3>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                            {Object.entries(RecruitingProgressLabel).map(([key, value]) => {
                                 if (key === '-1') return null; // Skip 'Rejected' status
 
                                 return (
-                                    <li key={key} className={cn("progress-step", {
-                                        'text-primary font-semibold': Number(key) === Number(recruitingDetail?.progress),
-                                        'text-green-500': Number(key) < Number(recruitingDetail?.progress),
-                                    })}>{`${Number(key) < Number(recruitingDetail?.progress) ? '✓ ' : ''}${value}`}</li>
-                                )
-                            })
-                        }
+                                    <li
+                                        key={key}
+                                        className={cn('progress-step', {
+                                            'text-primary font-semibold':
+                                                Number(key) === Number(recruitingDetail?.progress),
+                                            'text-green-500': Number(key) < Number(recruitingDetail?.progress),
+                                        })}
+                                    >{`${Number(key) < Number(recruitingDetail?.progress) ? '✓ ' : ''}${value}`}</li>
+                                );
+                            })}
 
-                        <li className={cn("progress-step", {
-                            'text-red-500 font-semibold': recruitingDetail?.progress === RecruitingProgress.REJECTED
-                        })}>Rejected</li>
-                    </ul>
-                </div>}
+                            <li
+                                className={cn('progress-step', {
+                                    'text-red-500 font-semibold':
+                                        recruitingDetail?.progress === RecruitingProgress.REJECTED,
+                                })}
+                            >
+                                Rejected
+                            </li>
+                        </ul>
+                    </div>
+                )}
             </div>
             {/* Right Panel */}
             <MainChat />
         </div>
-    )
-}
+    );
+};
 
-export default ChatPage
+export default ChatPage;
